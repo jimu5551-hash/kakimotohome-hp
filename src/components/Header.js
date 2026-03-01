@@ -216,32 +216,7 @@ export const Header = () => {
         transition: all 0.3s ease;
       }
 
-      @media (max-width: 1100px) {
-        .nav-list {
-            gap: 1.2rem;
-        }
-        .header-contact {
-            gap: 0.8rem;
-            padding-left: 0.8rem;
-            margin-left: 0.5rem;
-        }
-        .tel-number {
-            font-size: 1.2rem;
-        }
-        .tel-label {
-            font-size: 0.6rem;
-        }
-        .tel-free-badge {
-            font-size: 0.55rem;
-            padding: 0.05rem 0.3rem;
-        }
-        .btn-header {
-            padding: 0.6rem 1.2rem;
-            font-size: 0.9rem;
-        }
-      }
-
-      @media (max-width: 900px) {
+      @media (max-width: 1300px) {
         .mobile-menu-toggle {
           display: flex;
           z-index: 101;

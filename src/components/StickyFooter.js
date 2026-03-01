@@ -154,7 +154,7 @@ export const StickyFooter = () => {
       }
 
       /* Hide floating button on mobile, show sticky footer */
-      @media (max-width: 768px) {
+      @media (max-width: 1100px) {
         .floating-phone-btn {
           display: none;
         }
