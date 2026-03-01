@@ -183,8 +183,11 @@ export const BeforeAfter = () => {
       .ba-compare-wrapper {
         position: relative;
         width: 100%;
-        height: 600px; /* Base height for desktop */
+        /* Use a standard landscape ratio, but allow it to adjust based on width */
+        aspect-ratio: 16 / 9; 
+        max-height: 700px;
         overflow: hidden;
+        background-color: #f0f0f0; /* Show a placeholder bg if images don't cover completely */
       }
 
       .ba-img-after, .ba-img-before {
@@ -193,7 +196,7 @@ export const BeforeAfter = () => {
         left: 0;
         width: 100%;
         height: 100%;
-        object-fit: cover;
+        object-fit: contain; /* Changed from cover to contain to prevent any cropping */
         object-position: center;
         pointer-events: none; /* Let range input handle clicks */
       }
@@ -334,7 +337,8 @@ export const BeforeAfter = () => {
         }
 
         .ba-compare-wrapper {
-          height: 300px; /* Reduced height for mobile */
+          aspect-ratio: 4 / 3; /* Taller ratio for mobile to ensure enough touch area */
+          max-height: 400px;
         }
         
         .ba-label {
