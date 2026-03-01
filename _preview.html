@@ -1,0 +1,4207 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>柿本ホーム産業 | プレビュー</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>:root {
+  /* Modern Clean Palette - Warm & Premium */
+  --color-bg-dark: #ffffff;
+  /* Pure White */
+
+  /* NEW: Warm Greige (Porcelain/Sand) - Replaces cold gray */
+  --color-bg-secondary: #f4f3ef;
+  --color-bg-warm: #faf9f6;
+  /* Very subtle warm white */
+
+  --color-bg-white: #ffffff;
+
+  --color-text-primary: #3d3b38;
+  /* Warm Charcoal instead of sharp black */
+  --color-text-secondary: #6e6b65;
+  /* Warm Gray */
+
+  --color-accent: #d88d2d;
+  /* slightly richer gold/orange */
+  --color-accent-hover: #c27a1f;
+
+  --color-border: #e6e3dc;
+  /* Warm border */
+
+  /* Fonts - Modern Standard */
+  --font-primary: 'Noto Sans JP', sans-serif;
+  --font-heading: 'Noto Sans JP', sans-serif;
+  --font-sans: 'Noto Sans JP', sans-serif;
+  --font-serif: 'Noto Sans JP', sans-serif;
+
+  /* Spacing */
+  --spacing-xs: 1rem;
+  --spacing-sm: 2.5rem;
+  --spacing-md: 5rem;
+  --spacing-lg: 8rem;
+  /* Creating better vertical rhythm */
+  --spacing-xl: 8rem;
+
+  /* Transitions - Slower, more deliberate */
+  --transition-fast: 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+  /* Silkier ease */
+  --transition-slow: 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-primary);
+  background-color: var(--color-bg-dark);
+  color: var(--color-text-primary);
+  line-height: 2;
+  /* Increased for better readability for seniors */
+  font-size: 17px;
+  /* Larger base font for 50+ audience */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  /* Optical kerning for logo-like text quality */
+  font-feature-settings: "palt" 1;
+}
+
+/* Subtle Noise Texture for "Paper-like" Feel */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.03'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.4;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  /* Cleaner heading tracking */
+  color: var(--color-text-primary);
+  line-height: 1.4;
+  font-feature-settings: "palt" 1;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: var(--transition-fast);
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Utility Classes */
+.container {
+  max-width: 1280px;
+  /* Modern wide container */
+  margin: 0 auto;
+  padding: 0 4rem;
+  /* Increased padding as requested */
+}
+
+/* Typography Utility Classes */
+.text-vertical {
+  writing-mode: horizontal-tb;
+  text-orientation: mixed;
+  letter-spacing: 0.1em;
+}
+
+.section-title {
+  font-size: clamp(2rem, 4vw, 2.5rem);
+  text-align: center;
+  margin-bottom: var(--spacing-md);
+  position: relative;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  padding-bottom: 2rem;
+}
+
+/* Mobile Typography & Spacing */
+@media (max-width: 768px) {
+  :root {
+    /* Standardized Mobile Spacing */
+    --spacing-xs: 0.75rem;
+    --spacing-sm: 1.5rem;
+    /* 24px side padding */
+    --spacing-md: 3.5rem;
+    /* Section gap */
+    --spacing-lg: 5rem;
+    --spacing-xl: 5rem;
+  }
+
+  body {
+    font-size: 16px;
+    /* Larger mobile font for 50+ audience */
+    line-height: 1.9;
+  }
+
+  .section-title {
+    font-size: 1.75rem;
+    margin-bottom: 2.5rem;
+    letter-spacing: 0.05em;
+    padding-bottom: 1.5rem;
+  }
+
+  .container {
+    padding: 0 var(--spacing-sm);
+    /* Consistent 1.5rem padding */
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    word-break: break-word;
+    line-height: 1.4;
+  }
+}
+
+/* Remove old underline style for cleaner look */
+.section-title::after {
+  display: none;
+}
+
+.btn {
+  display: inline-block;
+  padding: 1.1rem 2.5rem;
+  border: 1.5px solid var(--color-text-primary);
+  color: var(--color-text-primary);
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  cursor: pointer;
+  background: transparent;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  font-weight: 500;
+}
+
+.btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  background-color: var(--color-text-primary);
+  transition: width 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  z-index: -1;
+}
+
+.btn:hover {
+  color: var(--color-bg-dark);
+  border-color: var(--color-text-primary);
+}
+
+.btn:hover::before {
+  width: 100%;
+}
+
+.btn-primary {
+  background-color: var(--color-accent);
+  border-color: var(--color-accent);
+  color: white;
+}
+
+.btn-primary::before {
+  background-color: var(--color-accent-hover);
+}
+
+.btn-primary:hover {
+  background-color: transparent;
+  border-color: var(--color-accent-hover);
+  color: white;
+}
+
+/* --- Modern Design Enhancements --- */
+
+/* Gradient Utilities */
+.gradient-accent {
+  background: linear-gradient(135deg, rgba(198, 168, 124, 0.1) 0%, rgba(181, 149, 47, 0.05) 100%);
+}
+
+.gradient-border {
+  position: relative;
+  background: var(--color-bg-white);
+}
+
+.gradient-border::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(135deg, rgba(198, 168, 124, 0.3), rgba(181, 149, 47, 0.1));
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+/* Enhanced Shadow System */
+/* Enhanced Shadow System - Premium Soft Shadows */
+.shadow-soft {
+  box-shadow:
+    0 10px 40px -10px rgba(0, 0, 0, 0.08),
+    /* Diffuse Ambient */
+    0 2px 10px -2px rgba(0, 0, 0, 0.05);
+  /* Detailed Key */
+}
+
+.shadow-medium {
+  box-shadow:
+    0 20px 50px -12px rgba(0, 0, 0, 0.12),
+    0 4px 12px -2px rgba(0, 0, 0, 0.08);
+}
+
+.shadow-strong {
+  box-shadow:
+    0 30px 60px -15px rgba(0, 0, 0, 0.15),
+    0 8px 24px -4px rgba(0, 0, 0, 0.12);
+}
+
+/* Glassmorphism - Premium Crisp */
+.glass {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+/* Glow Effects - More subtle for timeless design */
+.glow-on-hover {
+  transition: box-shadow 0.4s ease, transform 0.3s ease;
+}
+
+.glow-on-hover:hover {
+  box-shadow:
+    0 0 15px rgba(184, 153, 104, 0.12),
+    0 8px 24px rgba(0, 0, 0, 0.04);
+  transform: translateY(-2px);
+}
+
+/* Animated Gradient Text - Slowed for timeless feel */
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.gradient-text {
+  background: linear-gradient(90deg,
+      var(--color-text-primary) 0%,
+      var(--color-accent) 50%,
+      var(--color-text-primary) 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradientShift 20s ease infinite;
+}
+
+/* Animations */
+.fade-in,
+.fade-up,
+.fade-left,
+.fade-right,
+.zoom-in {
+  opacity: 0;
+  transition: opacity 1s ease, transform 1s ease;
+  will-change: opacity, transform;
+}
+
+.fade-in.is-visible {
+  opacity: 1;
+}
+
+.fade-up {
+  transform: translateY(30px);
+}
+
+.fade-up.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.fade-left {
+  transform: translateX(-30px);
+}
+
+.fade-left.is-visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.fade-right {
+  transform: translateX(30px);
+}
+
+.fade-right.is-visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.zoom-in {
+  transform: scale(0.95);
+}
+
+.zoom-in.is-visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Stagger delays */
+.delay-100 {
+  transition-delay: 0.1s;
+}
+
+.delay-200 {
+  transition-delay: 0.2s;
+}
+
+.delay-300 {
+  transition-delay: 0.3s;
+}
+
+.delay-400 {
+  transition-delay: 0.4s;
+}
+
+.delay-500 {
+  transition-delay: 0.5s;
+}
+
+/* --- Advanced Animations --- */
+
+/* Parallax Effect */
+.parallax {
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  will-change: background-position;
+}
+
+/* Image Reveal Effect */
+.reveal-image {
+  position: relative;
+  overflow: hidden;
+  opacity: 0;
+  /* Initially hidden */
+  transition: opacity 0.1s ease 0.5s;
+  /* Show image after curtain */
+}
+
+.reveal-image.is-visible {
+  opacity: 1;
+}
+
+.reveal-image::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--color-accent);
+  transform: translateX(-101%);
+  z-index: 2;
+}
+
+.reveal-image.is-visible::after {
+  animation: revealCurtain 1s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+}
+
+@keyframes revealCurtain {
+  0% {
+    transform: translateX(-101%);
+  }
+
+  50% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(101%);
+  }
+}
+
+/* Enhanced Hover Effects */
+.service-card {
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+}
+
+.service-image-wrapper img {
+  transition: transform 0.6s ease;
+}
+
+.service-card:hover .service-image-wrapper img {
+  transform: scale(1.05);
+}
+
+.btn {
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  background-color: var(--color-text-primary);
+  transition: width 0.3s ease;
+  z-index: -1;
+}
+
+.btn:hover::before {
+  width: 100%;
+}
+
+.btn-primary::before {
+  background-color: var(--color-accent-hover);
+}
+
+/* --- Reviews Section --- */
+.reviews-section {
+  padding: var(--spacing-lg) 0;
+  background-color: var(--color-bg-secondary);
+}
+
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: var(--spacing-md);
+}
+
+.review-card {
+  background-color: var(--color-bg-white);
+  padding: 2.5rem;
+  border-radius: 4px;
+  /* Slightly rounded for softness */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.review-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+}
+
+.review-header {
+  margin-bottom: 1.5rem;
+}
+
+.review-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+  font-size: 0.85rem;
+  color: var(--color-text-secondary);
+}
+
+.review-badge {
+  background-color: var(--color-bg-secondary);
+  padding: 0.25rem 0.75rem;
+  border-radius: 50px;
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+}
+
+.review-title {
+  font-size: 1.1rem;
+  font-weight: 500;
+  line-height: 1.5;
+  color: var(--color-text-primary);
+  font-family: var(--font-serif);
+}
+
+.review-content {
+  font-size: 0.95rem;
+  line-height: 1.8;
+  color: var(--color-text-secondary);
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
+}
+
+.review-stars {
+  color: var(--color-accent);
+  font-size: 1.2rem;
+  letter-spacing: 0.1em;
+}
+
+.reviews-footer {
+  text-align: center;
+  margin-top: var(--spacing-md);
+}
+
+.reviews-footer p {
+  margin-bottom: 1.5rem;
+  font-size: 0.9rem;
+  color: var(--color-text-secondary);
+}
+
+/* --- CEO Message Section --- */
+.ceo-section {
+  padding: var(--spacing-xl) 0;
+  background-color: var(--color-bg-white);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Add subtle decoration to CEO section */
+.ceo-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 30%;
+  height: 100%;
+  background: linear-gradient(to left, var(--color-bg-warm), transparent);
+  opacity: 0.5;
+  z-index: 0;
+}
+
+.ceo-content-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-md);
+  align-items: center;
+}
+
+.ceo-image-container {
+  position: relative;
+  width: 100%;
+  height: auto;
+  /* Allow natural height */
+  aspect-ratio: 4 / 3;
+  /* Standard ratio, change if needed */
+  background-color: #f0f0f0;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.ceo-image-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #e0e0e0;
+  color: #999;
+  font-size: 1.2rem;
+  letter-spacing: 0.1em;
+}
+
+.ceo-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 20%;
+  /* Focus on upper center for portraits */
+  transition: transform 0.8s ease;
+}
+
+.ceo-image-container:hover .ceo-image {
+  transform: scale(1.03);
+}
+
+.ceo-text-content {
+  padding-left: var(--spacing-sm);
+}
+
+.ceo-heading {
+  font-family: var(--font-serif);
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+  font-weight: 500;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  color: var(--color-text-primary);
+}
+
+.ceo-description {
+  font-size: 1rem;
+  line-height: 2;
+  color: var(--color-text-secondary);
+  margin-bottom: 3rem;
+  text-align: justify;
+}
+
+.ceo-signature {
+  text-align: right;
+  font-family: var(--font-serif);
+}
+
+.ceo-position {
+  font-size: 0.9rem;
+  color: var(--color-text-secondary);
+  margin-bottom: 0.5rem;
+}
+
+.ceo-name {
+  font-size: 1.5rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+}
+
+/* Mobile Adjustments for New Sections */
+@media (max-width: 900px) {
+  .ceo-content-wrapper {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .ceo-text-content {
+    padding-left: 0;
+  }
+
+  .ceo-image-container {
+    height: auto;
+    max-width: 500px;
+    margin: 0 auto;
+    order: 1;
+  }
+
+  .ceo-heading {
+    font-size: 1.5rem;
+  }
+
+  .mobile-only {
+    display: block;
+  }
+}
+
+@media (min-width: 901px) {
+  .mobile-only {
+    display: none;
+  }
+}
+
+/* Utility for forcing block display */
+.d-block {
+  display: block;
+}
+
+/* --- HERO SECTION STYLES (Restored) --- */
+.hero {
+  position: relative;
+  min-height: 85vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.hero-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('public/施工事例/新築-pixta_7825206_M.jpg');
+  /* Ensure this file exists, or fallback is handled */
+  background-color: #333;
+  /* Fallback color */
+  background-size: cover;
+  background-position: center;
+  z-index: 0;
+  animation: kenBurns 30s ease-in-out infinite alternate;
+  will-change: transform;
+}
+
+@media (max-width: 768px) {
+  .hero-bg {
+    background-position: center;
+    /* Center for the new image */
+  }
+}
+
+@keyframes kenBurns {
+  0% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(1.1);
+  }
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* Significantly lightened overlay for brighter image */
+  background: linear-gradient(to bottom,
+      rgba(0, 0, 0, 0.1) 0%,
+      rgba(0, 0, 0, 0.05) 50%,
+      rgba(0, 0, 0, 0.2) 100%);
+  z-index: 1;
+}
+
+.hero-text-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 2.5rem;
+  width: 100%;
+  max-width: 1000px;
+  z-index: 2;
+  position: relative;
+}
+
+.hero-title {
+  font-family: var(--font-heading);
+  font-size: clamp(2.8rem, 7vw, 5rem);
+  font-weight: 700;
+  color: #ffffff !important;
+  line-height: 1.25;
+  letter-spacing: 0.1em;
+  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  margin: 0;
+}
+
+.hero-subtitle {
+  font-family: var(--font-primary);
+  font-size: clamp(1rem, 2vw, 1.3rem);
+  color: #ffffff !important;
+  line-height: 2.2;
+  letter-spacing: 0.1em;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+  margin-bottom: 2rem;
+}
+
+/* Animation Classes */
+@keyframes revealChar {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.char-span {
+  display: inline-block;
+  opacity: 0;
+  animation: revealChar 0.8s cubic-bezier(0.2, 1, 0.3, 1) forwards;
+  color: #ffffff !important;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  will-change: transform, opacity;
+}
+
+/* Button Styles */
+.hero-cta-wrapper {
+  margin-top: 1rem;
+}
+
+.btn-hero {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-primary);
+  font-weight: 500;
+  color: #ffffff !important;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  background-color: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  padding: 1rem 2.5rem;
+  border-radius: 50px;
+  font-size: 1.1rem;
+}
+
+.btn-hero:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+.scroll-down {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  animation: fadeUp 1s ease 1s backwards;
+}
+
+.scroll-down .arrow {
+  width: 1px;
+  height: 60px;
+  background-color: rgba(255, 255, 255, 0.5);
+  position: relative;
+  overflow: hidden;
+}
+
+.scroll-down .arrow::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  background-color: #fff;
+  animation: scrollLine 2s ease-in-out infinite;
+}
+
+@keyframes scrollLine {
+  0% {
+    transform: translateY(-100%);
+  }
+
+  100% {
+    transform: translateY(200%);
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    min-height: 80vh;
+    padding-top: 60px;
+  }
+
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .hero-subtitle {
+    font-size: 0.9rem;
+    line-height: 1.8;
+    width: 90%;
+    margin: 0 auto;
+    display: block;
+  }
+
+  .btn-hero {
+    color: #ffffff !important;
+    padding: 0.8rem 2rem;
+    font-size: 1rem;
+  }
+}
+
+/* --- Loader Styles (Critical for visibility) --- */
+#loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #ffffff;
+  z-index: 9999;
+  transition: opacity 0.8s ease, visibility 0.8s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fade-out {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}</style>
+<style>#loader{display:none!important}</style>
+</head>
+<body>
+<div id="app">
+
+    <header class="header">
+      <div class="header-container">
+        <a href="public/" class="logo">
+          <img src="public/logo.avif" alt="柿本ホーム産業" class="logo-img" />
+        </a>
+        
+        <button class="mobile-menu-toggle" aria-label="メニューを開く">
+          <span></span>
+          <span></span>
+        </button>
+
+        <nav class="nav">
+          <ul class="nav-list">
+            <li class="nav-item"><a href="public/" class="nav-link">ホーム</a></li>
+            <li class="nav-item"><a href="gallery.html" class="nav-link">施工事例</a></li>
+            <li class="nav-item"><a href="#philosophy" class="nav-link">私たちについて</a></li>
+            <li class="nav-item"><a href="#services" class="nav-link">事業案内</a></li>
+            <li class="nav-item"><a href="#company" class="nav-link">会社概要</a></li>
+            <li class="header-contact">
+                <a href="tel:0120-654-711" class="header-tel">
+                    <span class="tel-top-row">
+                        <span class="tel-free-badge">通話無料</span>
+                        <span class="tel-label">お気軽にお電話ください</span>
+                    </span>
+                    <span class="tel-number-row">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="tel-phone-icon"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                        <span class="tel-number">0120-654-711</span>
+                    </span>
+                </a>
+                <a href="#contact" class="nav-link btn-header">お問い合わせ</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <style>
+      .header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 100;
+        background-color: rgba(255, 255, 255, 0.95); /* More opaque for readability */
+        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+        padding: 1rem 0;
+        transition: all 0.3s ease;
+      }
+
+      .header-container {
+        max-width: 1280px;
+        margin: 0 auto;
+        padding: 0 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 100%;
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+      }
+
+      .logo-img {
+        height: 65px; /* Slightly larger */
+        width: auto;
+        display: block;
+      }
+      
+      @media (max-width: 768px) {
+        .logo-img {
+          height: 50px;
+        }
+        
+        .header-container {
+          padding: 0 1.5rem;
+        }
+      }
+
+      .nav-list {
+        display: flex;
+        gap: 2rem;
+        align-items: center;
+      }
+
+      .nav-link {
+        font-size: 1rem; /* Larger font size */
+        font-weight: 500;
+        letter-spacing: 0.05em;
+        color: var(--color-text-primary);
+        position: relative;
+        text-decoration: none;
+      }
+
+      .nav-link:hover {
+        color: var(--color-accent);
+      }
+
+      .header-contact {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin-left: 1rem;
+        padding-left: 1.5rem;
+        border-left: 1px solid rgba(0,0,0,0.1);
+      }
+
+      .header-tel {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        text-decoration: none;
+        color: var(--color-text-primary);
+        line-height: 1.2;
+        padding: 0.5rem 1rem;
+        border-radius: 8px;
+        transition: all 0.3s ease;
+      }
+
+      .header-tel:hover {
+        background: rgba(216, 141, 45, 0.06);
+      }
+
+      .tel-top-row {
+        display: flex;
+        align-items: center;
+        gap: 0.4rem;
+        margin-bottom: 0.2rem;
+      }
+
+      .tel-free-badge {
+        font-size: 0.6rem;
+        font-weight: 700;
+        color: #fff;
+        background: var(--color-accent);
+        padding: 0.1rem 0.4rem;
+        border-radius: 3px;
+        letter-spacing: 0.05em;
+      }
+
+      .tel-label {
+        font-size: 0.7rem;
+        color: var(--color-text-secondary);
+      }
+
+      .tel-number-row {
+        display: flex;
+        align-items: center;
+        gap: 0.3rem;
+      }
+
+      .tel-phone-icon {
+        color: var(--color-accent);
+        flex-shrink: 0;
+      }
+
+      .tel-number {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: var(--color-text-primary);
+        font-family: var(--font-primary);
+        letter-spacing: 0.05em;
+      }
+      
+      .header-tel:hover .tel-number {
+        color: var(--color-accent);
+      }
+
+      .header-tel:hover .tel-phone-icon {
+        animation: headerPhoneRing 0.5s ease;
+      }
+
+      @keyframes headerPhoneRing {
+        0%, 100% { transform: rotate(0deg); }
+        20% { transform: rotate(-15deg); }
+        40% { transform: rotate(15deg); }
+        60% { transform: rotate(-10deg); }
+        80% { transform: rotate(10deg); }
+      }
+
+      .btn-header {
+        background-color: var(--color-accent); /* Orange for high visibility */
+        color: #fff !important;
+        padding: 0.8rem 1.8rem;
+        border-radius: 5px; /* Rounded rect for button feel */
+        transition: all 0.3s ease;
+        font-weight: 700;
+        font-size: 1rem;
+        box-shadow: 0 4px 6px rgba(216, 141, 45, 0.2);
+      }
+      
+      .btn-header:hover {
+         background-color: #c27a1f; 
+         transform: translateY(-2px);
+      }
+
+      .mobile-menu-toggle {
+        display: none;
+        flex-direction: column;
+        gap: 6px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 0.5rem;
+      }
+
+      .mobile-menu-toggle span {
+        display: block;
+        width: 24px;
+        height: 2px;
+        background-color: var(--color-text-primary);
+        transition: all 0.3s ease;
+      }
+
+      @media (max-width: 1100px) {
+        .nav-list {
+            gap: 1.2rem;
+        }
+        .header-contact {
+            gap: 0.8rem;
+            padding-left: 0.8rem;
+            margin-left: 0.5rem;
+        }
+        .tel-number {
+            font-size: 1.2rem;
+        }
+        .tel-label {
+            font-size: 0.6rem;
+        }
+        .tel-free-badge {
+            font-size: 0.55rem;
+            padding: 0.05rem 0.3rem;
+        }
+        .btn-header {
+            padding: 0.6rem 1.2rem;
+            font-size: 0.9rem;
+        }
+      }
+
+      @media (max-width: 900px) {
+        .mobile-menu-toggle {
+          display: flex;
+          z-index: 101;
+        }
+
+        .nav {
+          position: fixed;
+          top: 0;
+          right: -100%;
+          width: 100%;
+          height: 100vh;
+          background-color: white; /* Clean white background */
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          transition: right 0.4s ease;
+        }
+
+        .nav.active {
+          right: 0;
+        }
+
+        .nav-list {
+          flex-direction: column;
+          text-align: center;
+          gap: 2.5rem;
+        }
+        
+        .header-contact {
+            flex-direction: column;
+            border-left: none;
+            padding-left: 0;
+            margin-left: 0;
+            margin-top: 1.5rem;
+            gap: 1.2rem;
+            width: 100%;
+            max-width: 280px;
+        }
+        
+        .header-tel {
+            align-items: center;
+            background: rgba(216, 141, 45, 0.06);
+            padding: 1.2rem 1.5rem;
+            border-radius: 12px;
+            border: 1px solid rgba(216, 141, 45, 0.15);
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .btn-header {
+            width: 100%;
+            text-align: center;
+            padding: 1rem 1.8rem;
+            font-size: 1.1rem;
+            border-radius: 8px;
+            box-sizing: border-box;
+        }
+
+        .nav-link {
+          font-size: 1.2rem;
+          font-weight: 600;
+        }
+        
+        .tel-number {
+            font-size: 1.8rem;
+        }
+        
+        /* Hamburger Animation */
+        .mobile-menu-toggle.active span:nth-child(1) {
+          transform: rotate(45deg) translate(5px, 5px);
+        }
+        
+        .mobile-menu-toggle.active span:nth-child(2) {
+          opacity: 0;
+        }
+        
+        .mobile-menu-toggle.active span:nth-child(3) {
+          transform: rotate(-45deg) translate(5px, -5px);
+        }
+      }
+    </style>
+  
+
+    <section class="hero">
+      <div class="hero-bg"></div>
+      <div class="hero-overlay"></div>
+        <div class="hero-text-wrapper fade-up delay-200">
+          <h1 class="hero-title">
+            理想の暮らしを、<br>カタチに。
+          </h1>
+          <p class="hero-subtitle">
+            横浜で創業50年。地域密着の家づくり。<br>
+            お客様の理想に誠心誠意お応えします。
+          </p>
+          <div class="hero-cta-wrapper">
+             <div class="cta-actions">
+                <a href="#contact" class="btn-hero btn-hero-mail">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="hero-icon"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                  お問い合わせ
+                </a>
+             </div>
+          </div>
+        </div>
+        
+        <div class="scroll-down">
+          <!-- Text removed as per user request to avoid Katakana/English -->
+          <div class="arrow"></div>
+        </div>
+    </section>
+  
+
+    <section class="award-banner-section">
+      <div class="container">
+        <div class="award-banner-inner">
+          <div class="award-banner-top">
+            <p class="award-banner-year">2024年度</p>
+            <div class="award-banner-title-row">
+              <img src="https://www.homepro.jp/popup/image/award/cs_small2024.gif" alt="ホームプロ 顧客満足優良会社 2024" width="160" height="58" class="award-banner-badge" />
+              <h3 class="award-banner-title">顧客満足優良会社</h3>
+            </div>
+          </div>
+          <p class="award-banner-desc">ホームプロにおいて、お客様からの高い評価をいただき、顧客満足優良会社として表彰されました。</p>
+        </div>
+      </div>
+    </section>
+    <style>
+      .award-banner-section {
+        padding: 2rem 0;
+        background: linear-gradient(135deg, #faf9f6 0%, #f4f0e6 100%);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .award-banner-section::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 1px;
+        background: linear-gradient(90deg, transparent, rgba(216,141,45,0.3), transparent);
+      }
+
+      .award-banner-inner {
+        text-align: center;
+        padding: 1.5rem 2.5rem;
+        background: rgba(255,255,255,0.85);
+        border-radius: 12px;
+        box-shadow: 
+          0 4px 20px rgba(0,0,0,0.04),
+          inset 0 1px 0 rgba(255,255,255,0.8);
+        border: 1px solid rgba(216,141,45,0.15);
+      }
+
+      .award-banner-top {
+        margin-bottom: 0.8rem;
+      }
+
+      .award-banner-year {
+        font-size: 0.85rem;
+        color: var(--color-accent);
+        font-weight: 600;
+        letter-spacing: 0.15em;
+        margin-bottom: 0.5rem;
+      }
+
+      .award-banner-title-row {
+        display: inline-flex;
+        align-items: center;
+        gap: 1.2rem;
+        justify-content: center;
+      }
+
+      .award-banner-badge {
+        flex-shrink: 0;
+      }
+
+      .award-banner-title {
+        font-size: 1.5rem;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        color: var(--color-text-primary);
+        margin: 0;
+        background: linear-gradient(135deg, #8B6914, #D4A843);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .award-banner-desc {
+        font-size: 0.95rem;
+        color: var(--color-text-secondary);
+        line-height: 1.8;
+        margin: 0;
+      }
+
+      @media (max-width: 768px) {
+        .award-banner-section {
+          padding: 1.5rem 0;
+        }
+
+        .award-banner-inner {
+          padding: 1.5rem;
+        }
+
+        .award-banner-title-row {
+          flex-direction: column;
+          gap: 0.5rem;
+        }
+
+        .award-banner-title {
+          font-size: 1.3rem;
+        }
+
+        .award-banner-desc {
+          font-size: 0.9rem;
+        }
+      }
+    </style>
+  
+
+    <section id="before-after" class="section before-after-section">
+      <div class="container">
+        <div class="intro-block fade-up">
+          <h3 class="intro-title">信頼と実績の半世紀</h3>
+          <p class="intro-text">
+            当社は、昭和40年6月の創業以来、一般木造建築や鉄骨・鉄筋構造建築からプレハブ住宅の製造・建築まで、幅広い分野で事業を展開し、皆様のご要望に応えられるよう日々努力してまいりました。
+          </p>
+        </div>
+        <div class="ba-section-header fade-up">
+          <h2 class="ba-section-title">施工事例</h2>
+          <div class="ba-section-line"></div>
+          <p class="ba-section-desc">施工前後の変化をご覧ください</p>
+        </div>
+        
+        <div class="ba-cases-wrapper fade-up delay-200">
+
+          <!-- Case 1: B様邸 和室 -->
+          <div class="ba-case">
+            <div class="ba-case-header">
+              <h3 class="ba-case-title">B様邸 和室リフォーム</h3>
+            </div>
+            <div class="ba-pair">
+              <div class="ba-side">
+                <div class="ba-side-label ba-side-label--before">Before</div>
+                <div class="ba-side-img">
+                  <img src="public/ribinngu/B様邸　和室　前.jpg" alt="B様邸 和室 施工前" loading="lazy" />
+                </div>
+              </div>
+              <div class="ba-arrow-divider">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+              </div>
+              <div class="ba-side">
+                <div class="ba-side-label ba-side-label--after">After</div>
+                <div class="ba-side-img">
+                  <img src="public/ribinngu/B様邸　和室　後.jpg" alt="B様邸 和室 施工後" loading="lazy" />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Case 2: S様邸 浴室 -->
+          <div class="ba-case">
+            <div class="ba-case-header">
+              <h3 class="ba-case-title">S様邸 浴室リフォーム</h3>
+            </div>
+            <div class="ba-pair">
+              <div class="ba-side">
+                <div class="ba-side-label ba-side-label--before">Before</div>
+                <div class="ba-side-img">
+                  <img src="public/施工事例/S様邸　浴室　前.jpg" alt="S様邸 浴室 施工前" loading="lazy" />
+                </div>
+              </div>
+              <div class="ba-arrow-divider">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+              </div>
+              <div class="ba-side">
+                <div class="ba-side-label ba-side-label--after">After</div>
+                <div class="ba-side-img">
+                  <img src="public/施工事例/S様邸　浴室　後.jpg" alt="S様邸 浴室 施工後" loading="lazy" />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Case 3: H様邸 屋根カバー工法 -->
+          <div class="ba-case">
+            <div class="ba-case-header">
+              <h3 class="ba-case-title">H様邸 屋根カバー工法</h3>
+            </div>
+            <div class="ba-pair">
+              <div class="ba-side">
+                <div class="ba-side-label ba-side-label--before">Before</div>
+                <div class="ba-side-img">
+                  <img src="public/★丸野/H様邸屋根_カバー工法/600099505697718292.jpg" alt="H様邸 屋根 施工前" loading="lazy" />
+                </div>
+              </div>
+              <div class="ba-arrow-divider">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+              </div>
+              <div class="ba-side">
+                <div class="ba-side-label ba-side-label--after">After</div>
+                <div class="ba-side-img">
+                  <img src="public/★丸野/H様邸屋根_カバー工法/600099522172944526.jpg" alt="H様邸 屋根 施工後" loading="lazy" />
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="ba-more-wrapper fade-up delay-300">
+          <a href="gallery.html" class="ba-more-btn">
+            施工事例をもっと見る →
+          </a>
+        </div>
+      </div>
+    </section>
+    <style>
+      .before-after-section {
+        padding: var(--spacing-xl) 0;
+        background: linear-gradient(180deg, var(--color-bg-secondary) 0%, #f8f6f3 100%);
+      }
+
+      /* Intro Text Block */
+      .intro-block {
+        text-align: center;
+        max-width: 800px;
+        margin: 0 auto 3rem;
+        padding-bottom: 1.5rem;
+        border-bottom: 1px solid var(--color-border);
+      }
+
+      .intro-title {
+        font-size: 1.5rem;
+        margin-bottom: 1.5rem;
+        font-weight: 500;
+        letter-spacing: 0.1em;
+        color: var(--color-text-primary);
+      }
+
+      .intro-text {
+        line-height: 2.2;
+        color: var(--color-text-secondary);
+        text-align: justify;
+      }
+      
+      @media (max-width: 768px) {
+        .intro-title {
+            font-size: 1.3rem;
+        }
+        
+        .intro-text {
+            text-align: left;
+        }
+      }
+
+      .ba-section-header {
+        text-align: center;
+        margin-bottom: 3rem;
+      }
+
+      .ba-section-title {
+        font-family: var(--font-serif);
+        font-size: clamp(2rem, 5vw, 2.8rem);
+        font-weight: 600;
+        letter-spacing: 0.15em;
+        color: var(--color-text-primary);
+        margin: 0 0 1.5rem 0;
+      }
+
+      .ba-section-line {
+        width: 80px;
+        height: 2px;
+        background: linear-gradient(90deg, transparent, var(--color-primary), transparent);
+        margin: 0 auto 1.5rem;
+      }
+
+      .ba-section-desc {
+        font-size: 1rem;
+        color: var(--color-text-secondary);
+        line-height: 1.8;
+        margin: 0;
+      }
+
+      /* ===== Side-by-Side Layout ===== */
+      .ba-cases-wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+      }
+
+      .ba-case {
+        background: var(--color-bg-white);
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .ba-case:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 12px 40px rgba(0,0,0,0.1);
+      }
+
+      .ba-case-header {
+        padding: 1.5rem 2rem;
+        border-bottom: 1px solid var(--color-border);
+      }
+
+      .ba-case-title {
+        font-size: 1.2rem;
+        font-weight: 600;
+        letter-spacing: 0.05em;
+        margin: 0;
+      }
+
+      .ba-pair {
+        display: flex;
+        align-items: center;
+        position: relative;
+      }
+
+      .ba-side {
+        flex: 1;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .ba-side-label {
+        position: absolute;
+        top: 1rem;
+        z-index: 2;
+        padding: 0.4rem 1.2rem;
+        border-radius: 20px;
+        font-size: 0.8rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+      }
+
+      .ba-side-label--before {
+        left: 1rem;
+        background: linear-gradient(135deg, #555 0%, #333 100%);
+        color: white;
+      }
+
+      .ba-side-label--after {
+        left: 1rem;
+        background: linear-gradient(135deg, var(--color-accent) 0%, #c4956a 100%);
+        color: white;
+      }
+
+      .ba-side-img {
+        width: 100%;
+        overflow: hidden;
+      }
+
+      .ba-side-img img {
+        width: 100%;
+        height: auto;
+        display: block;
+        transition: transform 0.5s ease;
+      }
+
+      .ba-side:hover .ba-side-img img {
+        transform: scale(1.03);
+      }
+
+      /* Arrow divider between Before/After */
+      .ba-arrow-divider {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 56px;
+        flex-shrink: 0;
+        background: var(--color-bg-white);
+        color: var(--color-accent);
+        z-index: 1;
+        position: relative;
+      }
+
+      .ba-arrow-divider::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 1px;
+        height: 100%;
+        background: var(--color-border);
+      }
+
+      .ba-arrow-divider::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 1px;
+        height: 100%;
+        background: var(--color-border);
+      }
+
+      .ba-arrow-divider svg {
+        animation: ba-arrow-pulse 2s ease-in-out infinite;
+      }
+
+      @keyframes ba-arrow-pulse {
+        0%, 100% { transform: translateX(0); opacity: 1; }
+        50% { transform: translateX(4px); opacity: 0.6; }
+      }
+
+      /* More Button Styles */
+      .ba-more-wrapper {
+        text-align: center;
+        margin-top: 3rem;
+      }
+
+      .ba-more-btn {
+        display: inline-block;
+        padding: 1.2rem 3rem;
+        border: 2px solid #e67e22;
+        color: #e67e22;
+        text-decoration: none;
+        font-size: 1.1rem;
+        font-weight: 600;
+        letter-spacing: 0.08em;
+        transition: all 0.3s ease;
+      }
+
+      .ba-more-btn:hover {
+        background: #e67e22;
+        color: white;
+      }
+
+      /* --- Mobile --- */
+      @media (max-width: 768px) {
+        .before-after-section {
+          padding: var(--spacing-md) 0;
+        }
+
+        .intro-block {
+          margin: 0 auto 2rem;
+          padding-bottom: 1rem;
+        }
+
+        .intro-title {
+          font-size: 1.2rem;
+        }
+
+        .intro-text {
+          text-align: left;
+          font-size: 0.95rem;
+        }
+
+        .ba-section-header {
+          margin-bottom: 2rem;
+        }
+
+        .ba-section-title {
+          font-size: 1.8rem;
+        }
+
+        .ba-cases-wrapper {
+          gap: 2rem;
+        }
+
+        .ba-pair {
+          flex-direction: column;
+        }
+
+        .ba-arrow-divider {
+          width: 100%;
+          height: 44px;
+          flex-direction: row;
+        }
+
+        .ba-arrow-divider::before {
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 1px;
+        }
+
+        .ba-arrow-divider::after {
+          top: auto;
+          bottom: 0;
+          right: 0;
+          width: 100%;
+          height: 1px;
+        }
+
+        .ba-arrow-divider svg {
+          transform: rotate(90deg);
+          animation: ba-arrow-pulse-mobile 2s ease-in-out infinite;
+        }
+
+        @keyframes ba-arrow-pulse-mobile {
+          0%, 100% { transform: rotate(90deg) translateX(0); opacity: 1; }
+          50% { transform: rotate(90deg) translateX(4px); opacity: 0.6; }
+        }
+
+        .ba-case-header {
+          padding: 1rem 1.2rem;
+        }
+
+        .ba-case-title {
+          font-size: 1.05rem;
+        }
+
+        .ba-side-label {
+          padding: 0.3rem 0.9rem;
+          font-size: 0.7rem;
+        }
+
+        .ba-more-btn {
+          width: 100%;
+          padding: 1rem;
+          font-size: 0.95rem;
+          text-align: center;
+          box-sizing: border-box;
+        }
+      }
+    </style>
+  
+
+    <section id="philosophy" class="section philosophy">
+      <div class="container">
+        <!-- Section 1: 50 Years -->
+        <div class="strength-row fade-up">
+          <div class="strength-visual">
+             <div class="image-container">
+               <img src="public/about-family.jpg" alt="家づくりの相談をする家族" />
+             </div>
+          </div>
+          <div class="strength-content">
+            <h3 class="strength-title">横浜で50年以上の実績</h3>
+            <div class="strength-text">
+              <p>
+                昭和48年の創業以来、横浜エリアを中心に地域密着で歩んでまいりました。
+              </p>
+              <p>
+                親子二代、三代にわたってご依頼いただくお客様も多く、地域の皆様との信頼関係こそが私たちの最大の財産です。
+              </p>
+              <p>
+                土地の特性や気候風土を知り尽くしているからこそできる、長く安心して住み続けられる住まいづくりをご提案いたします。
+              </p>
+              <p>
+                これからも「街の頼れる工務店」として、お客様の暮らしに寄り添い続けてまいります。
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Section 2: Home Pro Awards -->
+        <div class="strength-row reverse fade-up delay-200">
+           <div class="strength-visual">
+             <div class="image-container">
+               <img src="public/awards.jpg" alt="ホームプロ表彰盾" />
+             </div>
+          </div>
+          <div class="strength-content">
+            <h3 class="strength-title">ホームプロ受賞多数</h3>
+            <div class="strength-text">
+              <p>
+                利用者数No.1のリフォーム会社紹介サイト「ホームプロ」において、数々の賞を受賞しております。
+              </p>
+              <p>
+                これは、施工品質はもちろんのこと、お客様への対応や提案力、アフターフォローに至るまで、総合的に高い評価をいただいた証です。
+              </p>
+              <p>
+                第三者機関による客観的な評価に加え、実際に施工されたお客様からの「ありがとう」の声を励みに、さらなる品質向上に努めてまいります。
+              </p>
+            </div>
+            <div class="strength-link-wrapper">
+              <a href="https://www.homepro.jp/kaisha/325246/" target="_blank" rel="noopener noreferrer" class="homepro-link">
+                ホームプロでの評価を見る <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <style>
+      .philosophy {
+        padding: var(--spacing-xl) 0;
+        background-color: var(--color-bg-white);
+      }
+
+      .strength-row {
+        display: flex;
+        align-items: center;
+        gap: 3rem;
+        margin-bottom: 4rem;
+      }
+      
+      .strength-row:last-child {
+        margin-bottom: 0;
+      }
+
+      .strength-row.reverse {
+        flex-direction: row-reverse;
+      }
+
+      .strength-visual {
+        flex: 1;
+      }
+      
+      .image-container {
+        width: 100%;
+        height: 400px; /* Established height */
+        overflow: hidden;
+        border-radius: 2px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      }
+      
+      .image-container img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.6s ease;
+      }
+      
+      .strength-row:hover .image-container img {
+        transform: scale(1.03);
+      }
+
+      .strength-content {
+        flex: 1;
+        padding-left: 1rem;
+      }
+      
+      .strength-row.reverse .strength-content {
+        padding-left: 0;
+        padding-right: 1rem;
+      }
+
+      .strength-title {
+        font-size: 1.8rem;
+        font-weight: 500;
+        letter-spacing: 0.1em;
+        margin-bottom: 2rem;
+        padding-bottom: 1rem;
+        border-bottom: 3px solid var(--color-accent);
+        display: inline-block;
+        color: var(--color-text-primary);
+      }
+
+      .strength-text p {
+        font-size: 1rem;
+        line-height: 2;
+        color: var(--color-text-secondary);
+        margin-bottom: 1.5rem;
+        text-align: justify;
+      }
+      
+      .strength-link-wrapper {
+        margin-top: 2rem;
+      }
+      
+      .homepro-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.6rem;
+        padding: 1rem 2rem;
+        background-color: var(--color-accent);
+        color: white;
+        font-weight: 700;
+        letter-spacing: 0.05em;
+        text-decoration: none;
+        border-radius: 4px;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 10px rgba(216, 141, 45, 0.3);
+      }
+      
+      .homepro-link:hover {
+        background-color: #c27a1f;
+        transform: translateY(-2px);
+        box-shadow: 0 6px 15px rgba(216, 141, 45, 0.4);
+      }
+
+      @media (max-width: 900px) {
+        .strength-row {
+          flex-direction: column;
+          gap: 2rem;
+          margin-bottom: 3.5rem;
+        }
+        
+        .strength-row.reverse {
+          flex-direction: column;
+        }
+        
+        .image-container {
+          height: 250px;
+        }
+        
+        .strength-content, 
+        .strength-row.reverse .strength-content {
+          padding: 0;
+        }
+        
+        .strength-title {
+          width: 100%;
+          font-size: 1.4rem;
+          margin-bottom: 1.2rem;
+          padding-bottom: 0.8rem;
+        }
+
+        .strength-text p {
+          font-size: 0.95rem;
+          margin-bottom: 1rem;
+          text-align: left;
+        }
+
+        .homepro-link {
+          width: 100%;
+          justify-content: center;
+          padding: 0.9rem 1.5rem;
+          font-size: 0.95rem;
+          box-sizing: border-box;
+        }
+      }
+    </style>
+  
+
+      <section class="cta-section fade-up">
+        <div class="container cta-container">
+          <div class="cta-content">
+            <h2 class="cta-title">理想の住まいづくり、<br>まずはご相談ください。</h2>
+            <p class="cta-desc">
+              新築・リフォーム・外構工事など、<br>
+              お住まいに関することなら何でもお気軽にお問い合わせください。
+            </p>
+          </div>
+          <div class="cta-actions">
+            <a href="tel:0120-654-711" class="cta-btn cta-btn-tel">
+              <div class="cta-tel-content">
+                <span class="cta-tel-sub">お見積り・ご相談 <span class="cta-tel-free">通話無料</span></span>
+                <span class="cta-tel-number">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="cta-icon cta-phone-icon"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                  0120-654-711
+                </span>
+                <span class="cta-tel-hours">受付時間 9:00〜18:00（年中無休）</span>
+              </div>
+            </a>
+            <a href="#contact" class="cta-btn cta-btn-mail">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="cta-icon"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+              お問い合わせフォーム
+            </a>
+          </div>
+        </div>
+      </section>
+      <style>
+        .cta-section {
+          padding: var(--spacing-xl) 0;
+          background: linear-gradient(180deg, #fff 0%, var(--color-bg-secondary) 100%);
+        }
+
+        .cta-container {
+          display: flex;
+          align-items: center;
+          gap: 4rem;
+          background: #fff;
+          border-radius: 16px;
+          padding: 3.5rem;
+          box-shadow: 0 8px 40px rgba(0,0,0,0.06);
+        }
+
+        .cta-content {
+          flex: 1;
+        }
+  
+        .cta-title {
+          font-family: var(--font-heading);
+          font-size: 2rem;
+          color: var(--color-text-primary);
+          margin-bottom: 2rem;
+          line-height: 1.6;
+          font-weight: 700;
+        }
+  
+        .cta-desc {
+          color: var(--color-text-secondary);
+          line-height: 2.0;
+          font-size: 1.1rem;
+          margin-bottom: 1rem;
+        }
+  
+        .cta-actions {
+          display: flex;
+          flex-direction: column;
+          gap: 1.5rem;
+          min-width: 300px;
+        }
+  
+        .cta-btn {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding: 1.2rem 2.5rem;
+          text-decoration: none;
+          font-family: var(--font-primary);
+          font-weight: 700;
+          font-size: 1.1rem;
+          border-radius: 8px;
+          transition: all 0.3s ease;
+          gap: 0.8rem;
+          letter-spacing: 0.08em;
+        }
+  
+        .cta-btn-tel {
+          background: linear-gradient(135deg, #d88d2d 0%, #c27a1f 100%);
+          border: 2px solid #d88d2d;
+          color: #fff;
+          font-size: 1.1rem;
+          padding: 1.5rem 2.5rem;
+          flex-direction: column;
+          position: relative;
+          overflow: hidden;
+          border-radius: 10px;
+        }
+
+        .cta-btn-tel::before {
+          content: '';
+          position: absolute;
+          top: -50%;
+          left: -50%;
+          width: 200%;
+          height: 200%;
+          background: radial-gradient(circle, rgba(255,255,255,0.15) 0%, transparent 60%);
+          opacity: 0;
+          transition: opacity 0.4s ease;
+        }
+
+        .cta-btn-tel:hover::before {
+          opacity: 1;
+        }
+  
+        .cta-btn-tel:hover {
+          background: linear-gradient(135deg, #c27a1f 0%, #a8691a 100%);
+          border-color: #c27a1f;
+          color: #fff;
+          transform: translateY(-2px);
+          box-shadow: 0 8px 25px rgba(216, 141, 45, 0.35);
+        }
+
+        .cta-tel-content {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 0.3rem;
+        }
+
+        .cta-tel-sub {
+          font-size: 0.85rem;
+          font-weight: 500;
+          opacity: 0.95;
+          letter-spacing: 0.1em;
+        }
+
+        .cta-tel-free {
+          display: inline-block;
+          background: rgba(255,255,255,0.25);
+          padding: 0.1rem 0.5rem;
+          border-radius: 3px;
+          font-size: 0.75rem;
+          font-weight: 700;
+          margin-left: 0.3rem;
+        }
+
+        .cta-tel-number {
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+          font-size: 1.8rem;
+          font-weight: 800;
+          letter-spacing: 0.08em;
+        }
+
+        .cta-phone-icon {
+          width: 28px;
+          height: 28px;
+        }
+
+        .cta-btn-tel:hover .cta-phone-icon {
+          animation: ctaPhoneRing 0.6s ease;
+        }
+
+        @keyframes ctaPhoneRing {
+          0%, 100% { transform: rotate(0deg); }
+          20% { transform: rotate(-15deg); }
+          40% { transform: rotate(15deg); }
+          60% { transform: rotate(-10deg); }
+          80% { transform: rotate(10deg); }
+        }
+
+        .cta-tel-hours {
+          font-size: 0.75rem;
+          opacity: 0.85;
+          font-weight: 400;
+          letter-spacing: 0.05em;
+        }
+  
+        .cta-btn-mail {
+          background-color: #fff;
+          color: var(--color-text-primary);
+          border: 2px solid var(--color-text-primary);
+          border-radius: 10px;
+        }
+  
+        .cta-btn-mail:hover {
+          background-color: var(--color-text-primary);
+          color: #fff;
+          transform: translateY(-2px);
+        }
+  
+        .cta-icon {
+          width: 24px;
+          height: 24px;
+        }
+  
+        @media (max-width: 768px) {
+          .cta-container {
+            flex-direction: column;
+            text-align: center;
+            gap: 2.5rem;
+            padding: 2.5rem 1.5rem;
+            border-radius: 12px;
+          }
+  
+          .cta-actions {
+            width: 100%;
+            min-width: unset;
+          }
+
+          .cta-title {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+          }
+
+          .cta-desc {
+            font-size: 1rem;
+          }
+
+          .cta-tel-number {
+            font-size: 1.5rem;
+          }
+
+          .cta-btn {
+            padding: 1rem 1.5rem;
+          }
+
+          .cta-btn-tel {
+            padding: 1.2rem 1.5rem;
+          }
+        }
+      </style>
+    
+
+    <section id="services" class="section services">
+      <div class="container">
+        <h2 class="section-title">事業案内</h2>
+        
+        <div class="services-grid">
+          
+          <!-- Reform & Rebuilding -->
+          <div class="service-card fade-up">
+            <div class="service-image-wrapper">
+              <img src="public/設楽邸/設楽様邸リビング.jpg" alt="建て替え・リフォーム" />
+            </div>
+            <div class="service-content">
+              <h3 class="service-title">建て替え・リフォーム</h3>
+              <ul class="service-items">
+                <li>住宅建て替え</li>
+                <li>フルリノベーション</li>
+                <li>水回りリフォーム</li>
+                <li>外装・外構リフォーム</li>
+              </ul>
+              <p class="service-desc">
+                長年住み慣れた愛着のある住まいを、ライフスタイルの変化に合わせて快適な空間へ。<br>
+                一級建築施工管理技士の確かな目利きと、熟練職人の技術で、新築同様の美しさと機能性を取り戻します。<br>
+                部分的なリフォームから、骨組みだけを残して作り変える大規模なリノベーションまで、お客様のご要望に幅広くお応えします。
+              </p>
+            </div>
+          </div>
+
+          <!-- Light Gauge Steel -->
+          <div class="service-card fade-up delay-200">
+            <div class="service-image-wrapper">
+              <img src="public/軽量鉄骨/軽量鉄骨.jpg" alt="軽量鉄骨建築" />
+            </div>
+            <div class="service-content">
+              <h3 class="service-title">軽量鉄骨建築</h3>
+              <ul class="service-items">
+                <li>倉庫</li>
+                <li>工場</li>
+                <li>ガレージ</li>
+                <li>事務所・店舗</li>
+              </ul>
+              <p class="service-desc">
+                短工期・低コスト・高耐久を実現する軽量鉄骨建築は、ビジネスの拠点づくりや趣味の空間に最適です。<br>
+                倉庫、工場、ガレージ、店舗併用住宅など、多種多様なニーズに対応。<br>
+                自社一貫体制による柔軟な設計と施工管理で、土地の形状や用途に合わせた無駄のない最適なプランをご提案いたします。
+              </p>
+            </div>
+          </div>
+
+        </div>
+        
+        <div class="services-cta fade-in" style="text-align: center; margin-top: 3rem;">
+          <a href="#contact" class="btn-primary">無料相談を申し込む</a>
+        </div>
+      </div>
+    </section>
+    <style>
+      .services {
+        padding: var(--spacing-xl) 0;
+        background-color: var(--color-bg-secondary);
+      }
+
+      .services-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 3rem;
+      }
+
+      .service-card {
+        background-color: var(--color-bg-white);
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        border: 1px solid rgba(0,0,0,0.03); /* Very subtle border */
+        border-radius: 16px; /* Increased radius */
+        box-shadow: 
+          0 4px 20px -5px rgba(0, 0, 0, 0.05),
+          0 10px 15px -10px rgba(0, 0, 0, 0.02); /* Multi-layered soft shadow */
+        transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.5s ease;
+        overflow: hidden; /* For rounded corners on images */
+      }
+
+      .service-image-wrapper {
+        width: 100%;
+        height: 260px; /* Slightly taller */
+        overflow: hidden;
+      }
+
+      .service-image-wrapper img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+      }
+
+      .service-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 
+           0 20px 40px -10px rgba(0, 0, 0, 0.08),
+           0 12px 20px -12px rgba(0, 0, 0, 0.06); /* Premium float effect */
+      }
+
+      .service-card:hover .service-image-wrapper img {
+        transform: scale(1.08);
+      }
+
+      .service-content {
+        padding: 2.5rem;
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+      }
+
+      .service-title {
+        font-size: 1.4rem;
+        margin-bottom: 1rem;
+        font-weight: 700;
+        letter-spacing: 0.05em;
+        text-align: left; /* Modern clean left align */
+        border-bottom: none; /* Remove border */
+        padding-bottom: 0;
+      }
+
+      .service-items {
+        padding: 0;
+        margin-bottom: 2rem;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        justify-content: flex-start; /* Left align to match title */
+      }
+
+      .service-items li {
+        font-size: 0.85rem;
+        color: var(--color-accent); /* Use accent color for tags */
+        background-color: rgba(243, 156, 18, 0.1); /* Soft orange accent bg */
+        padding: 0.3rem 1rem;
+        border-radius: 50px; /* Pill shape */
+        font-weight: 500;
+      }
+
+      .service-desc {
+        font-size: 0.95rem;
+        color: var(--color-text-secondary);
+        line-height: 1.8;
+        text-align: left; /* Left align for readability */
+        margin-top: auto;
+      }
+      
+      .btn-primary {
+        display: inline-block;
+        padding: 1rem 4rem;
+        background-color: var(--color-text-primary);
+        color: #fff;
+        font-size: 1rem;
+        letter-spacing: 0.1em;
+        transition: all 0.3s ease;
+      }
+      
+      .btn-primary:hover {
+        background-color: var(--color-accent);
+      }
+
+      @media (max-width: 900px) {
+        .services-grid {
+          grid-template-columns: 1fr;
+          gap: 2.5rem; /* Tighter gap for mobile */
+        }
+        
+        .btn-primary {
+          width: 100%; /* Full width button on mobile */
+          padding: 1rem;
+          text-align: center;
+        }
+        
+        .service-content {
+          padding: 1.5rem; /* Reduce padding on mobile cards */
+        }
+      }
+    </style>
+  
+
+    <section id="facilities" class="section facilities">
+      <div class="container">
+        <h2 class="section-title fade-up">自社のご紹介</h2>
+        
+        <!-- Factory Section -->
+        <div class="facility-item fade-up">
+          <div class="facility-image-wrapper">
+            <img src="public/自社工場/factory_new.jpg" alt="自社工場" />
+          </div>
+          <div class="facility-content">
+            <h3 class="facility-title">自社工場完備</h3>
+            <p class="facility-desc">
+              当社は自社工場を完備しており、熟練の職人が建具の加工や調整を行います。<br>
+              既製品では対応が難しい細かな寸法調整や、特殊な形状への対応も可能です。<br>
+              また、急な加工や調整にも迅速に対応できる体制を整えており、施工精度の向上と工期の短縮にも貢献しています。<br>
+              「ここを少し調整したい」「ぴったり収めたい」といった建具の調整も、お任せください。
+            </p>
+          </div>
+        </div>
+
+        <!-- Meeting Room Section -->
+        <div class="facility-item facility-reverse fade-up delay-200">
+          <div class="facility-image-wrapper">
+            <img src="public/商談部屋/8FD6A7C4-2850-4400-A6C7-5BF86762FC50.jpg" alt="商談スペース" />
+          </div>
+          <div class="facility-content">
+            <h3 class="facility-title">落ち着いた商談スペース</h3>
+            <p class="facility-desc">
+              お客様にリラックスしてご相談いただけるよう、広々とした商談スペースをご用意しております。<br>
+              カタログや豊富なサンプルを実際にお手に取っていただきながら、ゆっくりと理想の住まいについてお話しいただけます。<br>
+              プライバシーにも配慮した空間で、他のお客様を気にすることなく、じっくりとお悩みやご要望をお聞かせください。
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+    <style>
+      .facilities {
+        padding: var(--spacing-xl) 0;
+        background-color: var(--color-bg-white);
+      }
+
+      .facility-item {
+        display: flex;
+        align-items: center;
+        gap: 4rem;
+        margin-bottom: 6rem;
+      }
+
+      .facility-item:last-child {
+        margin-bottom: 0;
+      }
+
+      .facility-reverse {
+        flex-direction: row-reverse;
+      }
+
+      .facility-image-wrapper {
+        flex: 1;
+        height: 400px;
+        overflow: hidden;
+        border-radius: 2px;
+        box-shadow: var(--shadow-md);
+      }
+
+      .facility-image-wrapper img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.6s ease;
+      }
+
+      .facility-item:hover .facility-image-wrapper img {
+        transform: scale(1.05);
+      }
+
+      .facility-content {
+        flex: 1;
+      }
+
+      .facility-title {
+        font-size: 1.8rem;
+        margin-bottom: 1.5rem;
+        font-weight: 500;
+        letter-spacing: 0.1em;
+        color: var(--color-text-primary);
+        position: relative;
+        padding-bottom: 1rem;
+      }
+      
+      .facility-title::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 60px;
+        height: 1px;
+        background-color: var(--color-accent);
+      }
+
+      .facility-desc {
+        font-size: 1rem;
+        color: var(--color-text-secondary);
+        line-height: 2.2;
+        text-align: justify;
+      }
+
+      @media (max-width: 900px) {
+        .facility-item {
+          flex-direction: column;
+          gap: 2rem;
+          margin-bottom: 4rem;
+        }
+
+        .facility-reverse {
+          flex-direction: column;
+        }
+
+        .facility-image-wrapper {
+          width: 100%;
+          height: 300px;
+        }
+        
+        .facility-title::after {
+          left: 50%;
+          transform: translateX(-50%);
+        }
+        
+        .facility-title {
+          text-align: center;
+        }
+      }
+    </style>
+  
+
+    <section id="news" class="section news">
+      <div class="container">
+        <h2 class="section-title fade-up">新着施工例</h2>
+        
+        <div class="news-container fade-up delay-100">
+          <div class="news-list">
+            
+            <a href="gallery.html#reform" class="news-item">
+              <div class="news-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                  <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                </svg>
+              </div>
+              <div class="news-date">2025/01/20</div>
+              <div class="news-title">【リフォーム】システムキッチン改修工事の施工事例を追加しました</div>
+            </a>
+
+            <a href="gallery.html#reform" class="news-item">
+              <div class="news-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                  <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                </svg>
+              </div>
+              <div class="news-date">2025/01/15</div>
+              <div class="news-title">【リフォーム】バスルーム改修工事の施工事例を追加しました</div>
+            </a>
+
+            <a href="gallery.html#reform" class="news-item">
+              <div class="news-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                  <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                </svg>
+              </div>
+              <div class="news-date">2024/12/28</div>
+              <div class="news-title">【エクステリア】外構フェンス工事の施工事例を追加しました</div>
+            </a>
+
+            <a href="gallery.html#steel" class="news-item">
+              <div class="news-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                  <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                </svg>
+              </div>
+              <div class="news-date">2024/12/10</div>
+              <div class="news-title">【軽量鉄骨】事業用倉庫の施工事例を追加しました</div>
+            </a>
+            
+            <a href="gallery.html#steel" class="news-item">
+              <div class="news-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                  <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                </svg>
+              </div>
+              <div class="news-date">2024/11/30</div>
+              <div class="news-title">【軽量鉄骨】ガレージ建築の施工事例を追加しました</div>
+            </a>
+
+          </div>
+        </div>
+      </div>
+    </section>
+    <style>
+      .news {
+        padding: var(--spacing-lg) 0;
+        background-color: var(--color-bg-dark);
+      }
+
+      .news-container {
+        max-width: 1000px;
+        margin: 0 auto;
+        background: var(--color-bg-white);
+        border: none;
+        border-radius: 12px;
+        padding: 3rem;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+      }
+
+      .news-item {
+        display: flex;
+        align-items: center;
+        padding: 1.5rem 0;
+        border-bottom: 1px dotted var(--color-border);
+        transition: all 0.3s ease;
+        text-decoration: none;
+        color: var(--color-text-primary);
+      }
+
+      .news-item:last-child {
+        border-bottom: none;
+      }
+
+      .news-item:hover {
+        background-color: var(--color-bg-secondary);
+        padding-left: 1rem;
+        transform: translateX(5px);
+        border-radius: 4px;
+      }
+
+      .news-icon {
+        color: var(--color-accent); /* Updated to brand accent */
+        margin-right: 1.5rem;
+        display: flex;
+        align-items: center;
+      }
+
+      .news-date {
+        font-family: var(--font-primary);
+        color: var(--color-text-secondary);
+        margin-right: 2rem;
+        font-weight: 500;
+        min-width: 100px;
+        font-size: 0.9rem;
+      }
+
+      .news-title {
+        color: var(--color-text-primary); /* Modern dark text */
+        font-weight: 500;
+        flex-grow: 1;
+        transition: color 0.3s ease;
+      }
+
+      .news-item:hover .news-title {
+        color: var(--color-accent); /* Highlight on hover */
+        text-decoration: none;
+      }
+
+      @media (max-width: 768px) {
+        .news-item {
+          flex-wrap: wrap;
+        }
+        
+        .news-title {
+          width: 100%;
+          margin-top: 0.5rem;
+          padding-left: 2rem; /* Indent to align with text */
+        }
+      }
+    </style>
+  
+
+    <section id="reviews" class="reviews-section">
+      <div class="container">
+        <h2 class="section-title">お客様の声</h2>
+        
+        <div class="reviews-grid">
+          ${reviews.map((review, index) => `
+            <div class="review-card fade-up" style="animation-delay: ${index * 0.1}s">
+              <div class="review-header">
+                <div class="review-meta">
+                  <span class="review-badge">${review.category}</span>
+                  <span class="review-demographics">${review.location} ${review.age}/${review.gender}</span>
+                </div>
+                <h3 class="review-title">${review.title}</h3>
+              </div>
+              <p class="review-content">${review.content}</p>
+              <div class="review-stars">★★★★★</div>
+            </div>
+          `).join('')}
+        </div>
+        
+        <div class="reviews-footer fade-up">
+          <p>ホームプロでの評価平均 4.8/5.0 (2024年現在)</p>
+          <a href="https://www.homepro.jp/kaisha/325246/" target="_blank" rel="noopener noreferrer" style="display:inline-block;"><img src="https://www.homepro.jp/popup/image/award/cs_large2024.gif" alt="ホームプロ 顧客満足優良会社 2024" style="display:block; margin:0 auto; max-width:100%; height:auto;" /></a>
+        </div>
+      </div>
+    </section>
+    <style>
+      .reviews-section {
+        padding: var(--spacing-lg) 0;
+        background-color: var(--color-bg-dark);
+      }
+
+      .reviews-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 2rem;
+        margin-top: 3rem;
+      }
+
+      .review-card {
+        background-color: var(--color-bg-white);
+        padding: 2.5rem;
+        border: 1px solid rgba(0,0,0,0.03);
+        border-radius: 16px;
+        box-shadow: 
+          0 4px 20px -5px rgba(0, 0, 0, 0.05),
+          0 10px 15px -10px rgba(0, 0, 0, 0.02);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.5s ease;
+      }
+
+      .review-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 
+           0 20px 40px -10px rgba(0, 0, 0, 0.08),
+           0 12px 20px -12px rgba(0, 0, 0, 0.06);
+        border-color: rgba(243, 156, 18, 0.2);
+      }
+
+      .review-header {
+        margin-bottom: 1.5rem;
+      }
+
+      .review-meta {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start; /* Align top in case of wrapping */
+        margin-bottom: 1rem;
+        font-size: 0.85rem;
+        color: var(--color-text-secondary);
+        gap: 0.5rem; /* Add gap */
+      }
+      
+      @media (max-width: 480px) {
+        .review-meta {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 0.5rem;
+        }
+      }
+
+      .review-badge {
+        background-color: var(--color-bg-secondary);
+        padding: 0.2rem 0.8rem;
+        border-radius: 2px;
+        font-size: 0.8rem;
+      }
+
+      .review-title {
+        font-size: 1.1rem;
+        font-weight: 500;
+        line-height: 1.6;
+        color: var(--color-text-primary);
+      }
+
+      .review-content {
+        font-size: 0.95rem;
+        line-height: 1.8;
+        color: var(--color-text-secondary);
+        margin-bottom: 1.5rem;
+        flex-grow: 1;
+        text-align: justify;
+      }
+
+      .review-stars {
+        color: var(--color-accent);
+        font-size: 1rem;
+        letter-spacing: 0.2em;
+      }
+
+      .reviews-footer {
+        text-align: center;
+        margin-top: 3rem;
+      }
+
+      .reviews-footer p {
+        margin-bottom: 1.5rem;
+        font-size: 0.9rem;
+        color: var(--color-text-secondary);
+      }
+      
+      .btn-outline {
+        display: inline-block;
+        padding: 0.8rem 2rem;
+        border: 1px solid var(--color-text-primary);
+        color: var(--color-text-primary);
+        font-size: 0.9rem;
+        transition: all 0.3s ease;
+      }
+      
+      .btn-outline:hover {
+        background-color: var(--color-text-primary);
+        color: #fff;
+      }
+      @media (max-width: 768px) {
+        .reviews-grid {
+          grid-template-columns: 1fr;
+          gap: 1.5rem;
+          margin-top: 2rem;
+        }
+        
+        .review-card {
+          padding: 1.5rem;
+        }
+        
+        .review-title {
+          font-size: 1rem;
+        }
+
+        .reviews-footer {
+          margin-top: 2rem;
+        }
+
+        .reviews-footer img {
+          max-width: 280px;
+        }
+
+        .review-quote {
+          font-size: 0.9rem;
+        }
+      }
+    </style>
+  
+
+    <section id="ceo-message" class="ceo-section">
+      <div class="container">
+        <div class="ceo-content-wrapper">
+          <div class="ceo-image-container fade-right">
+            <img src="public/ceo.jpg" alt="代表取締役 井上 博善" class="ceo-image" />
+          </div>
+          <div class="ceo-text-content fade-left">
+            <h2 class="section-title text-left">代表挨拶</h2>
+            <h3 class="ceo-heading">「家」は家族の幸せを育む場所。<br>その想いを大切に、誠実な施工をお届けします。</h3>
+            <p class="ceo-description">
+              創業以来、私たちは地域に根ざした工務店として、お客様一人ひとりの暮らしに寄り添ったリフォームをご提案してまいりました。<br><br>
+              「満足のいく仕上がり」「プロとしての的確なアドバイス」といった温かいお言葉をいただけることが、私たちにとって何よりの喜びであり、誇りです。<br><br>
+              熟練の職人による確かな技術と、きめ細やかな対応で、お客様の「理想の住まい」をカタチにします。小さな修理から大規模なリノベーションまで、どんなことでもお気軽にご相談ください。
+            </p>
+            <div class="ceo-signature">
+              <p class="ceo-position">代表取締役</p>
+              <img src="public/shomei.jpg" alt="井上 博善" class="ceo-signature-img" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <style>
+      .ceo-section {
+        padding: var(--spacing-xl) 0;
+        background-color: var(--color-bg-white);
+      }
+
+      .ceo-content-wrapper {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 5rem;
+        align-items: center;
+      }
+
+      .ceo-image-container {
+        position: relative;
+        width: 100%;
+        height: 500px;
+        background-color: #f0f0f0;
+        overflow: hidden;
+      }
+
+      .ceo-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: top center; /* Ensure top of head isn't cut off */
+      }
+
+      .ceo-image-placeholder {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #e0e0e0;
+        color: #999;
+        font-size: 1.2rem;
+        letter-spacing: 0.1em;
+      }
+
+      .ceo-text-content {
+        padding-left: 0;
+      }
+      
+      .text-left {
+        text-align: left;
+      }
+      
+      .text-left::after {
+        left: 0;
+        transform: none;
+      }
+
+      .ceo-heading {
+        font-size: 1.6rem;
+        font-weight: 500;
+        line-height: 1.8;
+        margin-bottom: 2.5rem;
+        color: var(--color-text-primary);
+        letter-spacing: 0.1em;
+      }
+
+      .ceo-description {
+        font-size: 1rem;
+        line-height: 2.2;
+        color: var(--color-text-secondary);
+        margin-bottom: 3rem;
+        text-align: justify;
+      }
+
+      .ceo-signature {
+        text-align: right;
+        margin-top: 2rem;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+      }
+
+      .ceo-position {
+        font-size: 0.9rem;
+        color: var(--color-text-secondary);
+        margin-bottom: 0.5rem;
+      }
+
+      .ceo-signature-img {
+        max-width: 200px;
+        height: auto;
+        margin-top: 0.5rem;
+        display: block;
+        mix-blend-mode: multiply; /* Blends the white/light parts with background */
+        filter: grayscale(100%) contrast(1.5) brightness(1.2); /* Remove color, push gray to white */
+      }
+
+      @media (max-width: 900px) {
+        .ceo-content-wrapper {
+          grid-template-columns: 1fr;
+          gap: 2rem;
+        }
+
+        .ceo-image-container {
+          height: 280px;
+          order: 1;
+        }
+        
+        .ceo-text-content {
+          order: 2;
+          padding: 0;
+        }
+        
+        .ceo-heading {
+          font-size: 1.2rem;
+          margin-bottom: 1.5rem;
+          line-height: 1.6;
+        }
+        
+        .ceo-description {
+          font-size: 0.95rem;
+          margin-bottom: 2rem;
+          line-height: 2;
+        }
+
+        .ceo-signature-img {
+          max-width: 150px;
+        }
+      }
+    </style>
+  
+
+    <section id="company" class="section company">
+      <div class="container">
+        <h2 class="section-title fade-up">会社概要</h2>
+        
+        <div class="company-intro fade-up delay-100">
+          <h3>信頼と実績の半世紀</h3>
+          <p>
+            当社は、昭和40年6月の創業以来、一般木造建築や鉄骨・鉄筋構造建築からプレハブ住宅の製造・建築まで、幅広い分野で事業を展開し、皆様のご要望に応えられるよう日々努力してまいりました。
+          </p>
+        </div>
+
+        <div class="company-section fade-up delay-200">
+          <h3 class="subsection-title">沿革</h3>
+          <div class="history-list">
+            <div class="history-item">
+              <span class="history-year">昭和40年 6月</span>
+              <span class="history-content">横浜市緑区に於いて創業</span>
+            </div>
+            <div class="history-item">
+              <span class="history-year">昭和47年12月</span>
+              <span class="history-content">資本金150万円で「有限会社柿本工務店」を設立</span>
+            </div>
+            <div class="history-item">
+              <span class="history-year">昭和52年 9月</span>
+              <span class="history-content">社名を「柿本ホーム産業有限会社」に変更</span>
+            </div>
+            <div class="history-item">
+              <span class="history-year">昭和53年 7月</span>
+              <span class="history-content">組織を株式会社へ変更し「柿本ホーム産業株式会社」となる</span>
+            </div>
+            <div class="history-item">
+              <span class="history-year">平成元年10月</span>
+              <span class="history-content">資本金を1,000万円に増資、総合建設業へ移行</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="company-section fade-up delay-300">
+          <h3 class="subsection-title">概要</h3>
+          <dl class="company-overview">
+            <div class="overview-item">
+              <dt>会社名</dt>
+              <dd>柿本ホーム産業</dd>
+            </div>
+            <div class="overview-item">
+              <dt>所在地</dt>
+              <dd>〒225-0025 神奈川県横浜市青葉区鉄町1463</dd>
+            </div>
+            <div class="overview-item">
+              <dt>資本金</dt>
+              <dd>10,000,000円</dd>
+            </div>
+            <div class="overview-item">
+              <dt>代表取締役</dt>
+              <dd>井上 博善</dd>
+            </div>
+            <div class="overview-item">
+              <dt>従業員</dt>
+              <dd>10名</dd>
+            </div>
+            <div class="overview-item">
+              <dt>取引先銀行</dt>
+              <dd>三菱UFJ銀行　みずほ銀行　世田谷信用金庫</dd>
+            </div>
+            <div class="overview-item">
+              <dt>許認可</dt>
+              <dd>
+                一般建設業　神奈川県知事許可<br>
+                一般建築業（般-6）第12310号
+              </dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+    </section>
+    <style>
+      .company {
+        padding: var(--spacing-xl) 0;
+        background-color: var(--color-bg-dark);
+      }
+
+      .company-intro {
+        margin-bottom: var(--spacing-lg);
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+      }
+
+      .company-intro h3 {
+        font-size: 1.5rem;
+        margin-bottom: 1.5rem;
+        font-weight: 500;
+        letter-spacing: 0.1em;
+      }
+
+      .company-intro p {
+        line-height: 2.2;
+        color: var(--color-text-secondary);
+        text-align: justify;
+      }
+
+      .company-section {
+        margin-bottom: var(--spacing-lg);
+      }
+
+      .subsection-title {
+        font-size: 1.3rem;
+        letter-spacing: 0.2em;
+        margin-bottom: 2.5rem;
+        color: var(--color-text-primary);
+        text-align: center;
+        position: relative;
+        padding-bottom: 1rem;
+      }
+      
+      .subsection-title::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 30px;
+        height: 1px;
+        background-color: var(--color-accent);
+      }
+
+      .history-list {
+        border-top: 1px solid var(--color-border);
+      }
+
+      .history-item {
+        display: flex;
+        padding: 1.5rem 0;
+        border-bottom: 1px solid var(--color-border);
+        align-items: baseline;
+      }
+
+      .history-year {
+        width: 180px;
+        font-weight: 500;
+        flex-shrink: 0;
+        color: var(--color-text-primary);
+      }
+      
+      .history-content {
+        color: var(--color-text-secondary);
+      }
+
+      .company-overview {
+        display: grid;
+        grid-template-columns: 1fr;
+        border-top: 1px solid var(--color-border);
+      }
+
+      .overview-item {
+        display: grid;
+        grid-template-columns: 200px 1fr;
+        padding: 1.5rem 0;
+        border-bottom: 1px solid var(--color-border);
+      }
+
+      .overview-item dt {
+        font-weight: 500;
+        color: var(--color-text-primary);
+      }
+
+      .overview-item dd {
+        color: var(--color-text-secondary);
+      }
+
+      .navi-note {
+        margin-top: 2rem;
+        padding: 1.2rem 1.5rem;
+        background: rgba(216, 141, 45, 0.06);
+        border-left: 3px solid var(--color-accent);
+        border-radius: 0 8px 8px 0;
+      }
+
+      .navi-note p {
+        font-size: 0.9rem;
+        line-height: 1.9;
+        color: var(--color-text-secondary);
+        margin: 0;
+      }
+
+      .navi-note strong {
+        color: var(--color-text-primary);
+      }
+
+      @media (max-width: 768px) {
+        .history-item {
+          flex-direction: column;
+          gap: 0.5rem;
+          padding: 1rem 0;
+        }
+        
+        .overview-item {
+          grid-template-columns: 1fr;
+          gap: 0.5rem;
+          padding: 1rem 0;
+        }
+
+        .overview-item dt {
+          color: var(--color-accent);
+          font-size: 0.9rem;
+          border-left: 3px solid var(--color-accent);
+          padding-left: 0.5rem;
+        }
+        
+        .subsection-title {
+            font-size: 1.2rem;
+        }
+      }
+    </style>
+  
+
+    <section id="contact" class="section contact">
+      <div class="container">
+        <h2 class="section-title fade-up">お問い合わせ</h2>
+        
+        <div class="contact-layout">
+          <div class="contact-form-wrapper fade-up">
+            <div class="contact-badge">無料相談・お見積り</div>
+            <p class="contact-desc">
+              住まいに関するご相談、お見積もりなど、<br>
+              お気軽にお問い合わせください。
+            </p>
+            
+            <form class="contact-form" onsubmit="event.preventDefault(); alert('送信機能は現在実装されていません。');">
+              <div class="form-group">
+                <label for="inquiry-type">お問い合わせ内容</label>
+                <div class="select-wrapper">
+                  <select id="inquiry-type" name="inquiry-type" required>
+                    <option value="" disabled selected>選択してください</option>
+                    <option value="renovation">リフォーム</option>
+                    <option value="new-construction">新築</option>
+                    <option value="light-steel">軽量鉄骨</option>
+                    <option value="other">その他</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="name">お名前</label>
+                <input type="text" id="name" name="name" required placeholder="例：柿本 太郎">
+              </div>
+
+              <div class="form-group-row">
+                <div class="form-group zip-group">
+                  <label for="postal-code">郵便番号</label>
+                  <input type="text" id="postal-code" name="postal-code" placeholder="例：225-0025">
+                </div>
+                <div class="form-group address-group">
+                  <label for="address">ご住所</label>
+                  <input type="text" id="address" name="address" placeholder="例：神奈川県横浜市青葉区鉄町1463">
+                </div>
+              </div>
+              
+              <div class="form-group">
+                <label for="email">メールアドレス</label>
+                <input type="email" id="email" name="email" required placeholder="例：info@kakimotohome.com">
+                <div class="email-domains">
+                  <button type="button" class="domain-btn" data-domain="@gmail.com">@gmail.com</button>
+                  <button type="button" class="domain-btn" data-domain="@yahoo.co.jp">@yahoo.co.jp</button>
+                  <button type="button" class="domain-btn" data-domain="@icloud.com">@icloud.com</button>
+                </div>
+              </div>
+              
+              <div class="form-group">
+                <label for="phone">電話番号</label>
+                <input type="tel" id="phone" name="phone" placeholder="例：0120-654-711">
+              </div>
+
+              <div class="form-group">
+                <label>ご希望連絡方法</label>
+                <div class="radio-group">
+                  <label class="radio-label">
+                    <input type="radio" name="contact-method" value="email" checked> メール
+                  </label>
+                  <label class="radio-label">
+                    <input type="radio" name="contact-method" value="phone"> 電話
+                  </label>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label>過去弊社を利用したことがあるか</label>
+                <div class="radio-group">
+                  <label class="radio-label">
+                    <input type="radio" name="past-usage" value="yes"> ある
+                  </label>
+                  <label class="radio-label">
+                    <input type="radio" name="past-usage" value="no" checked> ない
+                  </label>
+                </div>
+              </div>
+              
+              <div class="form-group">
+                <label for="message">お問い合わせ内容（詳細）</label>
+                <textarea id="message" name="message" rows="5" required placeholder="ご相談内容をご記入ください"></textarea>
+              </div>
+              
+              <button type="submit" class="submit-btn">送信する</button>
+            </form>
+          </div>
+
+          <div class="contact-map-wrapper fade-up delay-200">
+            <div class="map-container">
+              <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3246.687697839634!2d139.5078!3d35.5615!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6018f7f000000001%3A0x0!2z44CSMjI1LTAwMjUg56We5aWI5bed55yM5qiq5rWc5biC6Z2S6JGJ5Yy66YmE55S6MTQ2Mw!5e0!3m2!1sja!2sjp!4v1620000000000!5m2!1sja!2sjp" 
+                width="100%" 
+                height="100%" 
+                style="border:0;" 
+                allowfullscreen="" 
+                loading="lazy">
+              </iframe>
+            </div>
+            <div class="map-info">
+              <p><strong>柿本ホーム産業</strong></p>
+              <p>〒225-0025 神奈川県横浜市青葉区鉄町1463</p>
+            </div>
+            <div class="navi-note">
+              <p>※カーナビをご利用の方は、<br>
+              「<strong>鉄町1465-1（旧住所）</strong>」 と入力してください。<br>
+              現住所「鉄町1463」では正しく案内されない場合がございます。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <style>
+      .contact {
+        padding: var(--spacing-xl) 0;
+        background-color: var(--color-bg-secondary);
+        position: relative;
+        overflow: hidden;
+      }
+
+      /* Decorative background element */
+      .contact::before {
+        content: '';
+        position: absolute;
+        top: -10%;
+        right: -5%;
+        width: 600px;
+        height: 600px;
+        background: radial-gradient(circle, rgba(142, 53, 74, 0.03) 0%, transparent 70%);
+        z-index: 0;
+        pointer-events: none;
+      }
+
+      .contact-layout {
+        display: flex;
+        flex-direction: column;
+        gap: 5rem;
+      }
+
+      .contact-form-wrapper {
+        background-color: var(--color-bg-white);
+        padding: 4rem;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+        border: none;
+        position: relative;
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        max-width: 800px;
+        width: 100%;
+        margin: 0 auto;
+      }
+
+      .contact-desc {
+        margin-bottom: 2.5rem;
+        color: var(--color-text-secondary);
+        line-height: 2;
+        text-align: center;
+        font-size: 0.95rem;
+      }
+
+      .contact-badge {
+        background-color: transparent;
+        color: var(--color-accent);
+        text-align: center;
+        display: inline-block;
+        padding: 0.5rem 0;
+        font-size: 1rem;
+        font-weight: 500;
+        margin-bottom: 1rem;
+        width: 100%;
+        letter-spacing: 0.15em;
+        border-bottom: 1px solid var(--color-accent);
+        width: fit-content;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .form-group {
+        margin-bottom: 2.5rem;
+      }
+
+      .form-group label {
+        display: block;
+        margin-bottom: 0.8rem;
+        font-size: 0.9rem;
+        font-weight: 500;
+        color: var(--color-text-primary);
+        letter-spacing: 0.05em;
+      }
+
+      .form-group input,
+      .form-group textarea {
+        width: 100%;
+        padding: 0.8rem 0;
+        background: transparent;
+        border: none;
+        border-bottom: 1px solid rgba(0,0,0,0.1);
+        color: var(--color-text-primary);
+        font-family: inherit;
+        font-size: 1rem;
+        transition: all 0.3s ease;
+        border-radius: 0;
+      }
+
+      .form-group input:focus,
+      .form-group textarea:focus {
+        outline: none;
+        border-bottom-color: var(--color-accent);
+        background-color: rgba(142, 53, 74, 0.01);
+      }
+
+      .form-group input::placeholder,
+      .form-group textarea::placeholder {
+        color: rgba(0,0,0,0.3);
+      }
+
+      .submit-btn {
+        background-color: var(--color-text-primary);
+        color: #fff;
+        border: none;
+        padding: 1.2rem 3rem;
+        font-family: var(--font-sans);
+        font-weight: 500;
+        letter-spacing: 0.2em;
+        cursor: pointer;
+        transition: all 0.4s ease;
+        margin-top: 2rem;
+        width: 100%;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .submit-btn:hover {
+        background-color: var(--color-accent);
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(142, 53, 74, 0.2);
+      }
+
+      .contact-map-wrapper {
+         display: flex;
+         flex-direction: column;
+         width: 100%;
+         max-width: 1000px;
+         margin: 0 auto;
+      }
+
+      .map-container {
+        width: 100%;
+        height: 450px; /* Fixed height for landscape map */
+        background-color: #eee;
+        margin-bottom: 0;
+        border: none;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+      }
+      
+      .map-container iframe {
+        width: 100%;
+        height: 100%;
+        border: 0;
+        filter: grayscale(0); /* Colored by default as requested */
+        transition: filter 0.3s ease;
+      }
+      
+      .map-container iframe:hover {
+          filter: grayscale(0);
+      }
+
+      .map-info {
+        background-color: var(--color-bg-white);
+        padding: 2rem;
+        margin-top: -3rem; /* Overlap upwards */
+        margin-left: auto;
+        margin-right: 2rem; /* Align right side */
+        width: fit-content;
+        min-width: 300px;
+        position: relative;
+        z-index: 2;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+      }
+
+      .map-info p {
+        margin-bottom: 0.5rem;
+        color: var(--color-text-secondary);
+        font-size: 0.95rem;
+        line-height: 1.8;
+      }
+      
+      .map-info strong {
+          color: var(--color-text-primary);
+          font-weight: 500;
+          font-size: 1.1rem;
+          display: block;
+          margin-bottom: 0.5rem;
+      }
+
+      .navi-note {
+        margin-top: 1.5rem;
+        padding: 1.2rem 1.5rem;
+        background: rgba(216, 141, 45, 0.06);
+        border-left: 3px solid var(--color-accent);
+        border-radius: 0 8px 8px 0;
+      }
+
+      .navi-note p {
+        font-size: 0.9rem;
+        line-height: 1.9;
+        color: var(--color-text-secondary);
+        margin: 0;
+      }
+
+      .navi-note strong {
+        color: var(--color-text-primary);
+      }
+
+      @media (max-width: 900px) {
+        .contact-form-wrapper {
+          padding: 2rem;
+        }
+        
+        .map-info {
+            margin: 1rem 0 0 0;
+            width: 100%;
+            margin-right: 0;
+        }
+        
+        .form-group-row {
+          flex-direction: column;
+          gap: 0;
+        }
+      }
+
+      /* New Styles for Added Fields */
+      .form-group-row {
+        display: flex;
+        gap: 2rem;
+        align-items: flex-start;
+      }
+
+      .zip-group {
+        flex: 0 0 150px; /* Fixed width for zip code */
+      }
+
+      .address-group {
+        flex: 1;
+      }
+
+      .select-wrapper {
+        position: relative;
+      }
+
+      .select-wrapper::after {
+        content: '▼';
+        font-size: 0.8rem;
+        position: absolute;
+        right: 0;
+        bottom: 1rem;
+        color: var(--color-text-secondary);
+        pointer-events: none;
+      }
+
+      .form-group select {
+        width: 100%;
+        padding: 0.8rem 0;
+        background: transparent;
+        border: none;
+        border-bottom: 1px solid rgba(0,0,0,0.1);
+        color: var(--color-text-primary);
+        font-family: inherit;
+        font-size: 1rem;
+        transition: all 0.3s ease;
+        border-radius: 0;
+        appearance: none; /* Remove default arrow */
+        cursor: pointer;
+      }
+
+      .form-group select:focus {
+        outline: none;
+        border-bottom-color: var(--color-accent);
+        background-color: rgba(142, 53, 74, 0.01);
+      }
+
+      .radio-group {
+        display: flex;
+        gap: 2rem;
+        padding-top: 0.5rem;
+      }
+
+      .radio-label {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        cursor: pointer;
+        font-size: 1rem;
+        color: var(--color-text-primary);
+      }
+
+      .radio-label input[type="radio"] {
+        margin: 0;
+        width: 1.2rem;
+        height: 1.2rem;
+        accent-color: var(--color-accent); /* Modern browser support */
+        cursor: pointer;
+      }
+
+      .email-domains {
+        display: flex;
+        gap: 0.5rem;
+        margin-top: 0.5rem;
+        flex-wrap: wrap;
+      }
+
+      .domain-btn {
+        background: transparent;
+        border: 1px solid var(--color-border);
+        border-radius: 4px;
+        padding: 0.2rem 0.6rem;
+        font-size: 0.8rem;
+        color: var(--color-text-secondary);
+        cursor: pointer;
+        transition: all 0.2s ease;
+      }
+
+      .domain-btn:hover {
+        background: var(--color-bg-secondary);
+        color: var(--color-accent);
+        border-color: var(--color-accent);
+      }
+    </style>
+  
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-main fade-in">
+          <div class="footer-brand">
+            <a href="public/" class="footer-logo-link">
+              <img src="public/logo.avif" alt="柿本ホーム産業" class="footer-logo-img" />
+            </a>
+            <p class="footer-tagline">住まいと快適のプロフェッショナル</p>
+            <p class="footer-description">
+              1965年の創業以来、横浜を中心に<br>
+              お客様の理想の住まいづくりを<br>
+              サポートしてまいりました。
+            </p>
+            <div class="footer-award">
+              <img src="https://www.homepro.jp/popup/image/award/cs_small2024.gif" alt="ホームプロ 顧客満足優良会社 2024" width="160" height="58" loading="lazy">
+            </div>
+            <div class="social-links">
+              <a href="#" aria-label="Instagram">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                </svg>
+              </a>
+              <a href="https://www.facebook.com/profile.php?id=100063448640002" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <div class="footer-nav-wrapper">
+            <div class="footer-col">
+              <h4>事業内容</h4>
+              <ul>
+                <li><a href="#services">リフォーム</a></li>
+                <li><a href="#services">外構エクステリア</a></li>
+                <li><a href="#services">新築・建替え</a></li>
+                <li><a href="gallery.html">施工事例</a></li>
+              </ul>
+            </div>
+
+            <div class="footer-col">
+              <h4>会社案内</h4>
+              <ul>
+                <li><a href="#philosophy">企業理念</a></li>
+                <li><a href="#company">会社概要</a></li>
+                <li><a href="#reviews">お客様の声</a></li>
+                <li><a href="#news">お知らせ</a></li>
+              </ul>
+            </div>
+
+            <div class="footer-col contact-col">
+              <h4>お問い合わせ</h4>
+              <ul>
+                <li>〒225-0025</li>
+                <li>神奈川県横浜市青葉区鉄町1463</li>
+                <li class="tel-link"><a href="tel:0120-654-711"><span class="footer-tel-free">通話無料</span> 0120-654-711</a></li>
+                <li class="mail-link"><a href="mailto:info@kakimotohome.com">info@kakimotohome.com</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <div class="footer-bottom-content">
+            <p class="copyright">&copy; 2024 柿本ホーム産業株式会社 All Rights Reserved.</p>
+            <div class="footer-legal">
+              <a href="#">プライバシーポリシー</a>
+              <a href="#">免責事項</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <style>
+      .footer {
+        background-color: var(--color-bg-secondary);
+        padding: 6rem 0 2rem;
+        border-top: 1px solid rgba(0,0,0,0.05);
+        color: var(--color-text-primary);
+      }
+
+      .footer-main {
+        display: flex;
+        justify-content: space-between;
+        gap: 4rem;
+        margin-bottom: 5rem;
+      }
+
+      .footer-brand {
+        flex: 0 0 300px;
+      }
+
+      .footer-award {
+        margin: 1.5rem 0;
+        text-align: center;
+      }
+
+      .footer-logo-link {
+        display: block;
+        margin-bottom: 1.5rem;
+        text-decoration: none;
+      }
+
+      .footer-logo-img {
+        height: 80px; /* Slightly larger in footer */
+        width: auto;
+        display: block;
+      }
+
+      .footer-tagline {
+        font-size: 0.85rem;
+        color: var(--color-accent);
+        margin-bottom: 1.5rem;
+        font-weight: 500;
+        letter-spacing: 0.1em;
+      }
+
+      .footer-description {
+        font-size: 0.9rem;
+        line-height: 2;
+        color: var(--color-text-secondary);
+        margin-bottom: 2rem;
+      }
+
+      .footer-award {
+        margin-bottom: 2rem;
+      }
+
+      .footer-award img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 4px;
+      }
+
+      .footer-nav-wrapper {
+        display: flex;
+        gap: 5rem;
+        flex-wrap: wrap;
+      }
+
+      .footer-col h4 {
+        font-size: 1rem;
+        letter-spacing: 0.15em;
+        margin-bottom: 2rem;
+        color: var(--color-text-primary);
+        font-weight: 600;
+        position: relative;
+        padding-bottom: 0.5rem;
+      }
+      
+      .footer-col h4::after {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 30px;
+          height: 1px;
+          background-color: var(--color-accent);
+      }
+
+      .footer-col ul {
+        list-style: none;
+      }
+
+      .footer-col ul li {
+        margin-bottom: 1rem;
+      }
+
+      .footer-col a,
+      .footer-col li {
+        color: var(--color-text-secondary);
+        font-size: 0.95rem;
+        transition: all 0.3s ease;
+        line-height: 1.5;
+        letter-spacing: 0.05em;
+        text-decoration: none;
+      }
+
+      .footer-col a:hover {
+        color: var(--color-accent);
+        padding-left: 5px;
+      }
+      
+      .contact-col li {
+          margin-bottom: 0.5rem;
+      }
+      
+      .tel-link a {
+          font-family: var(--font-primary);
+          font-size: 1.4rem;
+          font-weight: 700;
+          color: var(--color-text-primary);
+          display: flex;
+          align-items: center;
+          gap: 0.4rem;
+          transition: color 0.3s ease;
+      }
+
+      .tel-link a:hover {
+          color: var(--color-accent);
+          padding-left: 0;
+      }
+
+      .footer-tel-free {
+          font-size: 0.6rem;
+          font-weight: 700;
+          color: #fff;
+          background: var(--color-accent);
+          padding: 0.1rem 0.35rem;
+          border-radius: 3px;
+          letter-spacing: 0.05em;
+      }
+
+      .social-links {
+        display: flex;
+        gap: 1rem;
+      }
+
+      .social-links a {
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid var(--color-border);
+        border-radius: 50%;
+        color: var(--color-text-primary);
+        transition: all 0.3s ease;
+      }
+
+      .social-links a:hover {
+        background-color: var(--color-accent);
+        border-color: var(--color-accent);
+        color: white;
+        transform: translateY(-3px);
+      }
+
+      .footer-bottom {
+        padding-top: 2rem;
+        border-top: 1px solid rgba(0, 0, 0, 0.05);
+      }
+
+      .footer-bottom-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 1rem;
+      }
+
+      .footer-bottom p {
+        color: var(--color-text-secondary);
+        font-size: 0.8rem;
+        letter-spacing: 0.05em;
+        opacity: 0.7;
+      }
+
+      .footer-legal {
+        display: flex;
+        gap: 2rem;
+      }
+
+      .footer-legal a {
+        color: var(--color-text-secondary);
+        font-size: 0.8rem;
+        transition: color 0.3s ease;
+        text-decoration: none;
+        opacity: 0.7;
+      }
+
+      .footer-legal a:hover {
+        color: var(--color-text-primary);
+        opacity: 1;
+      }
+
+      @media (max-width: 1024px) {
+        .footer-main {
+          flex-direction: column;
+          gap: 3rem;
+        }
+        
+        .footer-nav-wrapper {
+            gap: 3rem;
+            justify-content: space-between;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .footer {
+            padding: 4rem 0 2rem;
+        }
+
+        .footer-nav-wrapper {
+          flex-direction: column;
+          gap: 2.5rem;
+        }
+        
+        .footer-brand {
+            flex: auto;
+            text-align: center;
+        }
+        
+        .footer-logo-text {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-logo-img {
+            margin: 0 auto;
+        }
+        
+        .social-links {
+            justify-content: center;
+            margin-top: 2rem;
+        }
+        
+        .footer-col h4::after {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .footer-col {
+            text-align: center;
+        }
+
+        .tel-link a {
+            justify-content: center;
+            font-size: 1.2rem;
+        }
+
+        .footer-bottom-content {
+          flex-direction: column;
+          gap: 1.5rem;
+        }
+      }
+    </style>
+  
+
+    <!-- Desktop Floating Phone Button -->
+    <a href="tel:0120-654-711" class="floating-phone-btn" aria-label="電話で問い合わせ">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="floating-phone-svg"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+      <span class="floating-phone-text">お気軽にお電話ください</span>
+      <span class="floating-phone-number">0120-654-711</span>
+    </a>
+
+    <!-- Mobile Sticky Footer -->
+    <div class="sticky-footer">
+      <div class="sticky-footer-btns">
+        <a href="tel:0120-654-711" class="sticky-btn sticky-btn-tel">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="sticky-icon sticky-phone-icon"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+          <span class="sticky-text">電話で相談<span class="sticky-free">無料</span></span>
+        </a>
+        <a href="#contact" class="sticky-btn sticky-btn-mail">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="sticky-icon"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+          <span class="sticky-text">メールで相談</span>
+        </a>
+      </div>
+    </div>
+    <style>
+      /* Floating Phone Button - Desktop */
+      .floating-phone-btn {
+        position: fixed;
+        bottom: 2rem;
+        right: 2rem;
+        z-index: 998;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.3rem;
+        padding: 1.2rem 1.8rem;
+        background: linear-gradient(135deg, #d88d2d 0%, #c27a1f 100%);
+        color: white;
+        text-decoration: none;
+        border-radius: 16px;
+        box-shadow: 0 6px 25px rgba(216, 141, 45, 0.4);
+        transition: all 0.3s ease;
+        font-weight: 700;
+        font-size: 1rem;
+        animation: floatingPulse 3s ease-in-out infinite;
+      }
+      
+      .floating-phone-btn:hover {
+        transform: translateY(-3px) scale(1.03);
+        box-shadow: 0 10px 35px rgba(216, 141, 45, 0.5);
+        animation: none;
+      }
+
+      .floating-phone-btn:hover .floating-phone-svg {
+        animation: floatPhoneRing 0.6s ease;
+      }
+
+      @keyframes floatPhoneRing {
+        0%, 100% { transform: rotate(0deg); }
+        20% { transform: rotate(-15deg); }
+        40% { transform: rotate(15deg); }
+        60% { transform: rotate(-10deg); }
+        80% { transform: rotate(10deg); }
+      }
+
+      @keyframes floatingPulse {
+        0%, 100% { box-shadow: 0 6px 25px rgba(216, 141, 45, 0.4); }
+        50% { box-shadow: 0 6px 35px rgba(216, 141, 45, 0.6); }
+      }
+      
+      .floating-phone-text {
+        display: block;
+        font-size: 0.7rem;
+        font-weight: 500;
+        opacity: 0.9;
+      }
+
+      .floating-phone-number {
+        display: block;
+        font-size: 1.1rem;
+        font-weight: 800;
+        letter-spacing: 0.05em;
+      }
+
+      /* Mobile Sticky Footer */
+      .sticky-footer {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        z-index: 999;
+        background-color: rgba(255, 255, 255, 0.98);
+        box-shadow: 0 -2px 20px rgba(0,0,0,0.1);
+        display: none;
+        padding: 10px 12px;
+        padding-bottom: calc(10px + env(safe-area-inset-bottom, 0px));
+        box-sizing: border-box;
+        backdrop-filter: blur(10px);
+      }
+
+      .sticky-footer-btns {
+        display: flex;
+        gap: 10px;
+        justify-content: space-between;
+      }
+
+      .sticky-btn {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 16px 0;
+        border-radius: 10px;
+        text-decoration: none;
+        font-family: var(--font-primary);
+        font-weight: 700;
+        transition: all 0.3s;
+        gap: 8px;
+        font-size: 1rem;
+        letter-spacing: 0.05em;
+      }
+
+      .sticky-btn:active {
+        transform: scale(0.97);
+      }
+
+      .sticky-btn-tel {
+        background: linear-gradient(135deg, #d88d2d 0%, #c27a1f 100%);
+        color: #fff;
+        flex: 1.15;
+        box-shadow: 0 2px 8px rgba(216, 141, 45, 0.3);
+      }
+
+      .sticky-free {
+        display: inline-block;
+        background: rgba(255,255,255,0.25);
+        padding: 0.05rem 0.35rem;
+        border-radius: 3px;
+        font-size: 0.7rem;
+        margin-left: 0.3rem;
+        font-weight: 700;
+      }
+
+      .sticky-btn-mail {
+        background-color: var(--color-text-primary);
+        color: #fff;
+      }
+
+      .sticky-icon {
+        width: 22px;
+        height: 22px;
+      }
+
+      .sticky-text {
+        font-size: 1rem;
+      }
+
+      /* Hide floating button on mobile, show sticky footer */
+      @media (max-width: 768px) {
+        .floating-phone-btn {
+          display: none;
+        }
+        
+        .sticky-footer {
+          display: block;
+        }
+        
+        body {
+          padding-bottom: 80px; 
+        }
+      }
+    </style>
+  
+
+</div>
+<script>
+document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click',function(e){e.preventDefault();const t=document.querySelector(this.getAttribute('href'));if(t)t.scrollIntoView({behavior:'smooth'})})});
+const mt=document.querySelector('.mobile-menu-toggle'),nav=document.querySelector('.nav');if(mt&&nav){mt.addEventListener('click',()=>{nav.classList.toggle('active');mt.classList.toggle('active')})}
+</script>
+</body>
+</html>
