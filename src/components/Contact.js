@@ -19,6 +19,7 @@ export const Contact = () => {
               <input type="hidden" name="_captcha" value="false">
               <input type="hidden" name="_language" value="ja">
               <input type="hidden" name="_template" value="table">
+              <input type="hidden" name="_cc" value="jimu@kakimotohome.com">
 
               <div class="form-group">
                 <label for="inquiry-type">お問い合わせ内容</label>
