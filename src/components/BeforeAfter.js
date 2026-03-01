@@ -22,6 +22,7 @@ export const BeforeAfter = () => {
               <h3 class="ba-case-title">B様邸 和室リフォーム</h3>
             </div>
             <div class="ba-compare-wrapper">
+              <div class="ba-bg-blur" style="background-image: url('/ribinngu/B様邸　和室　後.jpg')"></div>
               <img src="/ribinngu/B様邸　和室　後.jpg" alt="B様邸 和室 施工後" class="ba-img-after" loading="lazy" />
               <img src="/ribinngu/B様邸　和室　前.jpg" alt="B様邸 和室 施工前" class="ba-img-before" loading="lazy" />
               <div class="ba-label ba-label-before">Before</div>
@@ -42,6 +43,7 @@ export const BeforeAfter = () => {
               <h3 class="ba-case-title">S様邸 浴室リフォーム</h3>
             </div>
             <div class="ba-compare-wrapper">
+              <div class="ba-bg-blur" style="background-image: url('/施工事例/S様邸　浴室　後.jpg')"></div>
               <img src="/施工事例/S様邸　浴室　後.jpg" alt="S様邸 浴室 施工後" class="ba-img-after brighten-img" loading="lazy" />
               <img src="/施工事例/S様邸　浴室　前.jpg" alt="S様邸 浴室 施工前" class="ba-img-before" loading="lazy" />
               <div class="ba-label ba-label-before">Before</div>
@@ -62,6 +64,7 @@ export const BeforeAfter = () => {
               <h3 class="ba-case-title">H様邸 屋根カバー工法</h3>
             </div>
             <div class="ba-compare-wrapper">
+              <div class="ba-bg-blur" style="background-image: url('/★丸野/H様邸屋根_カバー工法/600099522172944526.jpg')"></div>
               <img src="/★丸野/H様邸屋根_カバー工法/600099522172944526.jpg" alt="H様邸 屋根 施工後" class="ba-img-after" loading="lazy" />
               <img src="/★丸野/H様邸屋根_カバー工法/600099505697718292.jpg" alt="H様邸 屋根 施工前" class="ba-img-before" loading="lazy" />
               <div class="ba-label ba-label-before">Before</div>
@@ -187,7 +190,20 @@ export const BeforeAfter = () => {
         aspect-ratio: 16 / 9; 
         max-height: 700px;
         overflow: hidden;
-        background-color: #f0f0f0; /* Show a placeholder bg if images don't cover completely */
+        background-color: #1a1a1a; /* Dark fallback background */
+      }
+
+      .ba-bg-blur {
+        position: absolute;
+        top: -10%;
+        left: -10%;
+        width: 120%;
+        height: 120%;
+        background-size: cover;
+        background-position: center;
+        filter: blur(20px) brightness(0.6);
+        z-index: 0;
+        pointer-events: none;
       }
 
       .ba-img-after, .ba-img-before {
@@ -199,6 +215,7 @@ export const BeforeAfter = () => {
         object-fit: contain; /* Changed from cover to contain to prevent any cropping */
         object-position: center;
         pointer-events: none; /* Let range input handle clicks */
+        z-index: 1;
       }
 
       .ba-img-before {
