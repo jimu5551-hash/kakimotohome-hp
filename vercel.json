@@ -1,5 +1,17 @@
 {
     "buildCommand": "npm run build",
     "outputDirectory": "dist",
-    "framework": "vite"
+    "framework": "vite",
+    "redirects": [
+        {
+            "source": "/施工事例",
+            "destination": "/gallery.html",
+            "permanent": true
+        },
+        {
+            "source": "/お問い合わせ",
+            "destination": "/contact.html",
+            "permanent": true
+        }
+    ]
 }
