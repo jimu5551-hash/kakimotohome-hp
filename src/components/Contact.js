@@ -74,10 +74,10 @@ export const Contact = () => {
                 <label>ご希望連絡方法</label>
                 <div class="radio-group">
                   <label class="radio-label">
-                    <input type="radio" name="希望連絡方法" value="email" checked> メール
+                    <input type="radio" name="希望連絡方法" value="メール" checked> メール
                   </label>
                   <label class="radio-label">
-                    <input type="radio" name="希望連絡方法" value="phone"> 電話
+                    <input type="radio" name="希望連絡方法" value="電話"> 電話
                   </label>
                 </div>
               </div>
@@ -86,10 +86,10 @@ export const Contact = () => {
                 <label>これまでに弊社をご利用いただいたことはございますか？</label>
                 <div class="radio-group">
                   <label class="radio-label">
-                    <input type="radio" name="弊社利用経験" value="yes"> ある
+                    <input type="radio" name="弊社利用経験" value="ある"> ある
                   </label>
                   <label class="radio-label">
-                    <input type="radio" name="弊社利用経験" value="no" checked> ない
+                    <input type="radio" name="弊社利用経験" value="ない" checked> ない
                   </label>
                 </div>
               </div>
