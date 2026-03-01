@@ -26,10 +26,10 @@ export const Contact = () => {
                 <div class="select-wrapper">
                   <select id="inquiry-type" name="お問い合わせ種別" required>
                     <option value="" disabled selected>選択してください</option>
-                    <option value="renovation">リフォーム</option>
-                    <option value="new-construction">新築</option>
-                    <option value="light-steel">軽量鉄骨</option>
-                    <option value="other">その他</option>
+                    <option value="リフォーム">リフォーム</option>
+                    <option value="新築">新築</option>
+                    <option value="軽量鉄骨">軽量鉄骨</option>
+                    <option value="その他">その他</option>
                   </select>
                 </div>
               </div>
