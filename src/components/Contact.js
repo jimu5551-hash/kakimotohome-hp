@@ -16,14 +16,14 @@ export const Contact = () => {
               <!-- FormSubmit Configuration -->
               <input type="hidden" name="_next" value="https://kakimotohome-hp.vercel.app/">
               <input type="hidden" name="_subject" value="【柿本ホーム産業】ウェブサイトからのお問い合わせ">
-              <input type="hidden" name="_template" value="table">
               <input type="hidden" name="_captcha" value="false">
               <input type="hidden" name="_language" value="ja">
+              <input type="hidden" name="_template" value="basic">
 
               <div class="form-group">
                 <label for="inquiry-type">お問い合わせ内容</label>
                 <div class="select-wrapper">
-                  <select id="inquiry-type" name="inquiry-type" required>
+                  <select id="inquiry-type" name="お問い合わせ種別" required>
                     <option value="" disabled selected>選択してください</option>
                     <option value="renovation">リフォーム</option>
                     <option value="new-construction">新築</option>
@@ -35,28 +35,28 @@ export const Contact = () => {
 
               <div class="form-group">
                 <label for="name">お名前</label>
-                <input type="text" id="name" name="name" required placeholder="例：柿本 太郎">
+                <input type="text" id="name" name="お名前" required placeholder="例：柿本 太郎">
               </div>
 
               <div class="form-group">
                 <label for="furigana">ふりがな</label>
-                <input type="text" id="furigana" name="furigana" required placeholder="例：かきもと たろう">
+                <input type="text" id="furigana" name="ふりがな" required placeholder="例：かきもと たろう">
               </div>
 
               <div class="form-group-row">
                 <div class="form-group zip-group">
                   <label for="postal-code">郵便番号</label>
-                  <input type="text" id="postal-code" name="postal-code" placeholder="例：225-0025">
+                  <input type="text" id="postal-code" name="郵便番号" placeholder="例：225-0025">
                 </div>
                 <div class="form-group address-group">
                   <label for="address">ご住所</label>
-                  <input type="text" id="address" name="address" placeholder="例：神奈川県横浜市青葉区鉄町1463">
+                  <input type="text" id="address" name="ご住所" placeholder="例：神奈川県横浜市青葉区鉄町1463">
                 </div>
               </div>
               
               <div class="form-group">
                 <label for="email">メールアドレス</label>
-                <input type="email" id="email" name="email" required placeholder="例：info@kakimotohome.com">
+                <input type="email" id="email" name="返信先メールアドレス" required placeholder="例：info@kakimotohome.com">
                 <div class="email-domains">
                   <button type="button" class="domain-btn" data-domain="@gmail.com">@gmail.com</button>
                   <button type="button" class="domain-btn" data-domain="@yahoo.co.jp">@yahoo.co.jp</button>
@@ -66,17 +66,17 @@ export const Contact = () => {
               
               <div class="form-group">
                 <label for="phone">電話番号</label>
-                <input type="tel" id="phone" name="phone" placeholder="例：0120-654-711">
+                <input type="tel" id="phone" name="電話番号" placeholder="例：0120-654-711">
               </div>
 
               <div class="form-group">
                 <label>ご希望連絡方法</label>
                 <div class="radio-group">
                   <label class="radio-label">
-                    <input type="radio" name="contact-method" value="email" checked> メール
+                    <input type="radio" name="希望連絡方法" value="email" checked> メール
                   </label>
                   <label class="radio-label">
-                    <input type="radio" name="contact-method" value="phone"> 電話
+                    <input type="radio" name="希望連絡方法" value="phone"> 電話
                   </label>
                 </div>
               </div>
@@ -85,17 +85,17 @@ export const Contact = () => {
                 <label>これまでに弊社をご利用いただいたことはございますか？</label>
                 <div class="radio-group">
                   <label class="radio-label">
-                    <input type="radio" name="past-usage" value="yes"> ある
+                    <input type="radio" name="弊社利用経験" value="yes"> ある
                   </label>
                   <label class="radio-label">
-                    <input type="radio" name="past-usage" value="no" checked> ない
+                    <input type="radio" name="弊社利用経験" value="no" checked> ない
                   </label>
                 </div>
               </div>
               
               <div class="form-group">
                 <label for="message">お問い合わせ内容（詳細）</label>
-                <textarea id="message" name="message" rows="5" required placeholder="ご相談内容をご記入ください"></textarea>
+                <textarea id="message" name="ご相談内容" rows="5" required placeholder="ご相談内容をご記入ください"></textarea>
               </div>
               
               <button type="submit" class="submit-btn">送信する</button>
