@@ -84,7 +84,7 @@ export const About = () => {
       
       .image-container {
         width: 100%;
-        height: 400px; /* Established height */
+        height: auto;
         overflow: hidden;
         border-radius: 2px;
         box-shadow: 0 10px 30px rgba(0,0,0,0.08);
@@ -92,8 +92,8 @@ export const About = () => {
       
       .image-container img {
         width: 100%;
-        height: 100%;
-        object-fit: cover;
+        height: auto;
+        display: block;
         transition: transform 0.6s ease, filter 0.3s ease;
       }
 
@@ -171,7 +171,7 @@ export const About = () => {
         }
         
         .image-container {
-          height: 250px;
+          height: auto;
         }
         
         .strength-content, 
