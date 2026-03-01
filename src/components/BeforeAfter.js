@@ -1,9 +1,3 @@
-import Swiper from 'swiper';
-import { Navigation, Pagination, Autoplay } from 'swiper/modules';
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-
 export const BeforeAfter = () => {
   return `
     <section id="before-after" class="section before-after-section">
@@ -20,96 +14,68 @@ export const BeforeAfter = () => {
           <p class="ba-section-desc">施工前後の変化をご覧ください</p>
         </div>
         
-        <div class="ba-slider-container fade-up delay-200">
-          <!-- Swiper -->
-          <div class="swiper ba-swiper">
-            <div class="swiper-wrapper">
+        <div class="ba-cases-wrapper fade-up delay-200">
 
-              <!-- Case 1: B様邸 和室 -->
-              <div class="swiper-slide">
-                <div class="ba-case">
-                  <div class="ba-case-header">
-                    <h3 class="ba-case-title">B様邸 和室リフォーム</h3>
-                  </div>
-                  <div class="ba-pair">
-                    <div class="ba-side">
-                      <div class="ba-side-label ba-side-label--before">Before</div>
-                      <div class="ba-side-img">
-                        <img src="/ribinngu/B様邸　和室　前.jpg" alt="B様邸 和室 施工前" loading="lazy" />
-                      </div>
-                    </div>
-                    <div class="ba-arrow-divider">
-                      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
-                    </div>
-                    <div class="ba-side">
-                      <div class="ba-side-label ba-side-label--after">After</div>
-                      <div class="ba-side-img">
-                        <img src="/ribinngu/B様邸　和室　後.jpg" alt="B様邸 和室 施工後" loading="lazy" />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Case 2: S様邸 浴室 -->
-              <div class="swiper-slide">
-                <div class="ba-case">
-                  <div class="ba-case-header">
-                    <h3 class="ba-case-title">S様邸 浴室リフォーム</h3>
-                  </div>
-                  <div class="ba-pair">
-                    <div class="ba-side">
-                      <div class="ba-side-label ba-side-label--before">Before</div>
-                      <div class="ba-side-img">
-                        <img src="/施工事例/S様邸　浴室　前.jpg" alt="S様邸 浴室 施工前" loading="lazy" />
-                      </div>
-                    </div>
-                    <div class="ba-arrow-divider">
-                      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
-                    </div>
-                    <div class="ba-side">
-                      <div class="ba-side-label ba-side-label--after">After</div>
-                      <div class="ba-side-img">
-                        <img src="/施工事例/S様邸　浴室　後.jpg" alt="S様邸 浴室 施工後" loading="lazy" class="brighten-img" />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Case 3: H様邸 屋根カバー工法 -->
-              <div class="swiper-slide">
-                <div class="ba-case">
-                  <div class="ba-case-header">
-                    <h3 class="ba-case-title">H様邸 屋根カバー工法</h3>
-                  </div>
-                  <div class="ba-pair">
-                    <div class="ba-side">
-                      <div class="ba-side-label ba-side-label--before">Before</div>
-                      <div class="ba-side-img">
-                        <img src="/★丸野/H様邸屋根_カバー工法/600099505697718292.jpg" alt="H様邸 屋根 施工前" loading="lazy" />
-                      </div>
-                    </div>
-                    <div class="ba-arrow-divider">
-                      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
-                    </div>
-                    <div class="ba-side">
-                      <div class="ba-side-label ba-side-label--after">After</div>
-                      <div class="ba-side-img">
-                        <img src="/★丸野/H様邸屋根_カバー工法/600099522172944526.jpg" alt="H様邸 屋根 施工後" loading="lazy" />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
+          <!-- Case 1: B様邸 和室 -->
+          <div class="ba-case">
+            <div class="ba-case-header">
+              <h3 class="ba-case-title">B様邸 和室リフォーム</h3>
             </div>
-            <!-- Pagination -->
-            <div class="swiper-pagination ba-pagination"></div>
-            <!-- Navigation -->
-            <div class="swiper-button-prev ba-button-prev"></div>
-            <div class="swiper-button-next ba-button-next"></div>
+            <div class="ba-compare-wrapper">
+              <img src="/ribinngu/B様邸　和室　後.jpg" alt="B様邸 和室 施工後" class="ba-img-after" loading="lazy" />
+              <img src="/ribinngu/B様邸　和室　前.jpg" alt="B様邸 和室 施工前" class="ba-img-before" loading="lazy" />
+              <div class="ba-label ba-label-before">Before</div>
+              <div class="ba-label ba-label-after">After</div>
+              <div class="ba-compare-handle">
+                <div class="ba-handle-line"></div>
+                <div class="ba-handle-button">
+                  <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l-3 3 3 3m8-6l3 3-3 3"></path></svg>
+                </div>
+              </div>
+              <input type="range" min="0" max="100" value="50" class="ba-compare-range" aria-label="Before/After Image Comparison Slider">
+            </div>
           </div>
+
+          <!-- Case 2: S様邸 浴室 -->
+          <div class="ba-case">
+            <div class="ba-case-header">
+              <h3 class="ba-case-title">S様邸 浴室リフォーム</h3>
+            </div>
+            <div class="ba-compare-wrapper">
+              <img src="/施工事例/S様邸　浴室　後.jpg" alt="S様邸 浴室 施工後" class="ba-img-after brighten-img" loading="lazy" />
+              <img src="/施工事例/S様邸　浴室　前.jpg" alt="S様邸 浴室 施工前" class="ba-img-before" loading="lazy" />
+              <div class="ba-label ba-label-before">Before</div>
+              <div class="ba-label ba-label-after">After</div>
+              <div class="ba-compare-handle">
+                <div class="ba-handle-line"></div>
+                <div class="ba-handle-button">
+                  <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l-3 3 3 3m8-6l3 3-3 3"></path></svg>
+                </div>
+              </div>
+              <input type="range" min="0" max="100" value="50" class="ba-compare-range" aria-label="Before/After Image Comparison Slider">
+            </div>
+          </div>
+
+          <!-- Case 3: H様邸 屋根カバー工法 -->
+          <div class="ba-case">
+            <div class="ba-case-header">
+              <h3 class="ba-case-title">H様邸 屋根カバー工法</h3>
+            </div>
+            <div class="ba-compare-wrapper">
+              <img src="/★丸野/H様邸屋根_カバー工法/600099522172944526.jpg" alt="H様邸 屋根 施工後" class="ba-img-after" loading="lazy" />
+              <img src="/★丸野/H様邸屋根_カバー工法/600099505697718292.jpg" alt="H様邸 屋根 施工前" class="ba-img-before" loading="lazy" />
+              <div class="ba-label ba-label-before">Before</div>
+              <div class="ba-label ba-label-after">After</div>
+              <div class="ba-compare-handle">
+                <div class="ba-handle-line"></div>
+                <div class="ba-handle-button">
+                  <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l-3 3 3 3m8-6l3 3-3 3"></path></svg>
+                </div>
+              </div>
+              <input type="range" min="0" max="100" value="50" class="ba-compare-range" aria-label="Before/After Image Comparison Slider">
+            </div>
+          </div>
+
         </div>
 
         <div class="ba-more-wrapper fade-up delay-300">
@@ -186,7 +152,7 @@ export const BeforeAfter = () => {
         margin: 0;
       }
 
-      /* ===== Side-by-Side Layout ===== */
+      /* ===== Slider Layout ===== */
       .ba-cases-wrapper {
         display: flex;
         flex-direction: column;
@@ -201,11 +167,6 @@ export const BeforeAfter = () => {
         transition: transform 0.3s ease, box-shadow 0.3s ease;
       }
 
-      .ba-case:hover {
-        transform: translateY(-4px);
-        box-shadow: 0 12px 40px rgba(0,0,0,0.1);
-      }
-
       .ba-case-header {
         padding: 1.5rem 2rem;
         border-bottom: 1px solid var(--color-border);
@@ -218,106 +179,99 @@ export const BeforeAfter = () => {
         margin: 0;
       }
 
-      .ba-pair {
-        display: flex;
-        align-items: center;
+      /* Image Comparison Slider core */
+      .ba-compare-wrapper {
         position: relative;
-      }
-
-      .ba-side {
-        flex: 1;
-        position: relative;
+        width: 100%;
+        height: 600px; /* Base height for desktop */
         overflow: hidden;
       }
 
-      .ba-side-label {
+      .ba-img-after, .ba-img-before {
         position: absolute;
-        top: 1rem;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        pointer-events: none; /* Let range input handle clicks */
+      }
+
+      .ba-img-before {
+        clip-path: polygon(0 0, 50% 0, 50% 100%, 0 100%);
         z-index: 2;
-        padding: 0.4rem 1.2rem;
-        border-radius: 20px;
-        font-size: 0.8rem;
-        font-weight: 700;
-        text-transform: uppercase;
-        letter-spacing: 1.5px;
       }
-
-      .ba-side-label--before {
-        left: 1rem;
-        background: linear-gradient(135deg, #555 0%, #333 100%);
-        color: white;
-      }
-
-      .ba-side-label--after {
-        left: 1rem;
-        background: linear-gradient(135deg, var(--color-accent) 0%, #c4956a 100%);
-        color: white;
-      }
-
-      .ba-side-img {
-        width: 100%;
-        overflow: hidden;
-      }
-
-      .ba-side-img img {
-        width: 100%;
-        height: auto;
-        display: block;
-        transition: transform 0.5s ease, filter 0.3s ease;
-      }
-
+      
       .brighten-img {
         filter: brightness(1.08) contrast(1.05);
       }
 
-      .brighten-img-ultra {
-        filter: brightness(1.2) contrast(1.3) saturate(0.7); /* Whitening/Cleaning effect, reduced brightness */
+      /* Labels */
+      .ba-label {
+        position: absolute;
+        top: 20px;
+        z-index: 4;
+        background: rgba(0,0,0,0.6);
+        color: white;
+        padding: 6px 16px;
+        border-radius: 20px;
+        font-size: 0.9rem;
+        font-weight: bold;
+        pointer-events: none;
+        letter-spacing: 0.1em;
+        backdrop-filter: blur(4px);
       }
 
-      .ba-side:hover .ba-side-img img {
-        transform: scale(1.03);
-      }
+      .ba-label-before { left: 20px; }
+      .ba-label-after { right: 20px; }
 
-      /* Arrow divider between Before/After */
-      .ba-arrow-divider {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 56px;
-        flex-shrink: 0;
-        background: var(--color-bg-white);
-        color: var(--color-accent);
-        z-index: 1;
-        position: relative;
-      }
-
-      .ba-arrow-divider::before {
-        content: '';
+      /* Invisible Range Input */
+      .ba-compare-range {
         position: absolute;
         top: 0;
         left: 0;
-        width: 1px;
+        width: 100%;
         height: 100%;
-        background: var(--color-border);
+        z-index: 10;
+        opacity: 0;
+        cursor: ew-resize;
+        margin: 0;
       }
 
-      .ba-arrow-divider::after {
-        content: '';
+      /* Handle UI */
+      .ba-compare-handle {
         position: absolute;
         top: 0;
-        right: 0;
-        width: 1px;
+        left: 50%;
+        width: 4px;
         height: 100%;
-        background: var(--color-border);
+        background-color: white;
+        transform: translateX(-50%);
+        z-index: 5;
+        pointer-events: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 0 10px rgba(0,0,0,0.3);
       }
 
-      .ba-arrow-divider svg {
-        animation: ba-arrow-pulse 2s ease-in-out infinite;
+      .ba-handle-button {
+        width: 48px;
+        height: 48px;
+        background-color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        color: var(--color-accent);
+        z-index: 6;
       }
 
-      @keyframes ba-arrow-pulse {
-        0%, 100% { transform: translateX(0); opacity: 1; }
-        50% { transform: translateX(4px); opacity: 0.6; }
+      .ba-handle-button svg {
+        width: 24px;
+        height: 24px;
       }
 
       /* More Button Styles */
@@ -343,79 +297,10 @@ export const BeforeAfter = () => {
         color: white;
       }
 
-      /* --- Swiper Styles --- */
-      .ba-slider-container {
-        position: relative;
-        padding: 0 40px; /* Space for navigation arrows */
-      }
-
-      .ba-swiper {
-        padding-bottom: 3rem; /* Space for pagination */
-      }
-
-      .swiper-slide {
-        height: auto;
-      }
-
-      /* Navigation Arrows */
-      .ba-button-prev,
-      .ba-button-next {
-        color: var(--color-accent);
-        background: var(--color-bg-white);
-        width: 44px;
-        height: 44px;
-        border-radius: 50%;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-        top: 40%;
-      }
-
-      .ba-button-prev:after,
-      .ba-button-next:after {
-        font-size: 1.2rem;
-        font-weight: bold;
-      }
-
-      .ba-button-prev {
-        left: -10px;
-      }
-
-      .ba-button-next {
-        right: -10px;
-      }
-
-      /* Pagination Dots */
-      .ba-pagination {
-        bottom: 0 !important;
-      }
-
-      .ba-pagination .swiper-pagination-bullet {
-        width: 10px;
-        height: 10px;
-        background: var(--color-text-secondary);
-        opacity: 0.5;
-        transition: all 0.3s ease;
-      }
-
-      .ba-pagination .swiper-pagination-bullet-active {
-        opacity: 1;
-        background: var(--color-accent);
-        width: 24px;
-        border-radius: 5px;
-      }
-
       /* --- Mobile --- */
       @media (max-width: 768px) {
         .before-after-section {
           padding: var(--spacing-md) 0;
-        }
-
-        .ba-slider-container {
-          padding: 0; /* Remove padding on mobile */
-        }
-
-        .ba-button-prev,
-        .ba-button-next {
-          display: none; /* Hide arrows on mobile, rely on swipe */
         }
 
         .intro-block {
@@ -440,41 +325,6 @@ export const BeforeAfter = () => {
           font-size: 1.8rem;
         }
 
-        .ba-pair {
-          flex-direction: column;
-        }
-
-        .ba-arrow-divider {
-          width: 100%;
-          height: 44px;
-          flex-direction: row;
-        }
-
-        .ba-arrow-divider::before {
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 1px;
-        }
-
-        .ba-arrow-divider::after {
-          top: auto;
-          bottom: 0;
-          right: 0;
-          width: 100%;
-          height: 1px;
-        }
-
-        .ba-arrow-divider svg {
-          transform: rotate(90deg);
-          animation: ba-arrow-pulse-mobile 2s ease-in-out infinite;
-        }
-
-        @keyframes ba-arrow-pulse-mobile {
-          0%, 100% { transform: rotate(90deg) translateX(0); opacity: 1; }
-          50% { transform: rotate(90deg) translateX(4px); opacity: 0.6; }
-        }
-
         .ba-case-header {
           padding: 1rem 1.2rem;
         }
@@ -483,9 +333,27 @@ export const BeforeAfter = () => {
           font-size: 1.05rem;
         }
 
-        .ba-side-label {
-          padding: 0.3rem 0.9rem;
-          font-size: 0.7rem;
+        .ba-compare-wrapper {
+          height: 300px; /* Reduced height for mobile */
+        }
+        
+        .ba-label {
+          padding: 4px 12px;
+          font-size: 0.8rem;
+          top: 10px;
+        }
+
+        .ba-label-before { left: 10px; }
+        .ba-label-after { right: 10px; }
+
+        .ba-handle-button {
+          width: 36px;
+          height: 36px;
+        }
+
+        .ba-handle-button svg {
+          width: 18px;
+          height: 18px;
         }
 
         .ba-more-btn {
@@ -501,29 +369,24 @@ export const BeforeAfter = () => {
 };
 
 export const initBeforeAfterSliders = () => {
-  new Swiper('.ba-swiper', {
-    modules: [Navigation, Pagination, Autoplay],
-    slidesPerView: 1,
-    spaceBetween: 30,
-    centeredSlides: true,
-    loop: true,
-    autoplay: {
-      delay: 5000,
-      disableOnInteraction: false,
-    },
-    pagination: {
-      el: '.ba-pagination',
-      clickable: true,
-    },
-    navigation: {
-      nextEl: '.ba-button-next',
-      prevEl: '.ba-button-prev',
-    },
-    breakpoints: {
-      1024: {
-        slidesPerView: 1.2, /* Show a bit of the next/prev slide on large screens */
-        spaceBetween: 40,
-      }
+  const sliders = document.querySelectorAll('.ba-compare-wrapper');
+
+  sliders.forEach(slider => {
+    const range = slider.querySelector('.ba-compare-range');
+    const beforeImg = slider.querySelector('.ba-img-before');
+    const handle = slider.querySelector('.ba-compare-handle');
+
+    if (range && beforeImg && handle) {
+      const updateSlider = () => {
+        const val = range.value;
+        beforeImg.style.clipPath = `polygon(0 0, ${val}% 0, ${val}% 100%, 0 100%)`;
+        handle.style.left = `${val}%`;
+      };
+
+      range.addEventListener('input', updateSlider);
+
+      // Initialize layout
+      updateSlider();
     }
   });
 };
