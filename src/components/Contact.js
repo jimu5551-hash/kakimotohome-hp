@@ -12,7 +12,13 @@ export const Contact = () => {
               お気軽にお問い合わせください。
             </p>
             
-            <form class="contact-form" onsubmit="event.preventDefault(); alert('送信機能は現在実装されていません。');">
+            <form action="https://formsubmit.co/info@kakimotohome.com" method="POST" class="contact-form">
+              <!-- FormSubmit Configuration -->
+              <input type="hidden" name="_next" value="https://kakimotohome-hp.vercel.app/">
+              <input type="hidden" name="_subject" value="【柿本ホーム産業】ウェブサイトからのお問い合わせ">
+              <input type="hidden" name="_template" value="table">
+              <input type="hidden" name="_captcha" value="false">
+
               <div class="form-group">
                 <label for="inquiry-type">お問い合わせ内容</label>
                 <div class="select-wrapper">
