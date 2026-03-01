@@ -1,3 +1,9 @@
+import Swiper from 'swiper';
+import { Navigation, Pagination, Autoplay } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+
 export const BeforeAfter = () => {
   return `
     <section id="before-after" class="section before-after-section">
@@ -14,80 +20,96 @@ export const BeforeAfter = () => {
           <p class="ba-section-desc">施工前後の変化をご覧ください</p>
         </div>
         
-        <div class="ba-cases-wrapper fade-up delay-200">
+        <div class="ba-slider-container fade-up delay-200">
+          <!-- Swiper -->
+          <div class="swiper ba-swiper">
+            <div class="swiper-wrapper">
 
-          <!-- Case 1: B様邸 和室 -->
-          <div class="ba-case">
-            <div class="ba-case-header">
-              <h3 class="ba-case-title">B様邸 和室リフォーム</h3>
-            </div>
-            <div class="ba-pair">
-              <div class="ba-side">
-                <div class="ba-side-label ba-side-label--before">Before</div>
-                <div class="ba-side-img">
-                  <img src="/ribinngu/B様邸　和室　前.jpg" alt="B様邸 和室 施工前" loading="lazy" />
+              <!-- Case 1: B様邸 和室 -->
+              <div class="swiper-slide">
+                <div class="ba-case">
+                  <div class="ba-case-header">
+                    <h3 class="ba-case-title">B様邸 和室リフォーム</h3>
+                  </div>
+                  <div class="ba-pair">
+                    <div class="ba-side">
+                      <div class="ba-side-label ba-side-label--before">Before</div>
+                      <div class="ba-side-img">
+                        <img src="/ribinngu/B様邸　和室　前.jpg" alt="B様邸 和室 施工前" loading="lazy" />
+                      </div>
+                    </div>
+                    <div class="ba-arrow-divider">
+                      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                    </div>
+                    <div class="ba-side">
+                      <div class="ba-side-label ba-side-label--after">After</div>
+                      <div class="ba-side-img">
+                        <img src="/ribinngu/B様邸　和室　後.jpg" alt="B様邸 和室 施工後" loading="lazy" />
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
-              <div class="ba-arrow-divider">
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
-              </div>
-              <div class="ba-side">
-                <div class="ba-side-label ba-side-label--after">After</div>
-                <div class="ba-side-img">
-                  <img src="/ribinngu/B様邸　和室　後.jpg" alt="B様邸 和室 施工後" loading="lazy" />
+
+              <!-- Case 2: S様邸 浴室 -->
+              <div class="swiper-slide">
+                <div class="ba-case">
+                  <div class="ba-case-header">
+                    <h3 class="ba-case-title">S様邸 浴室リフォーム</h3>
+                  </div>
+                  <div class="ba-pair">
+                    <div class="ba-side">
+                      <div class="ba-side-label ba-side-label--before">Before</div>
+                      <div class="ba-side-img">
+                        <img src="/施工事例/S様邸　浴室　前.jpg" alt="S様邸 浴室 施工前" loading="lazy" />
+                      </div>
+                    </div>
+                    <div class="ba-arrow-divider">
+                      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                    </div>
+                    <div class="ba-side">
+                      <div class="ba-side-label ba-side-label--after">After</div>
+                      <div class="ba-side-img">
+                        <img src="/施工事例/S様邸　浴室　後.jpg" alt="S様邸 浴室 施工後" loading="lazy" class="brighten-img" />
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
+
+              <!-- Case 3: H様邸 屋根カバー工法 -->
+              <div class="swiper-slide">
+                <div class="ba-case">
+                  <div class="ba-case-header">
+                    <h3 class="ba-case-title">H様邸 屋根カバー工法</h3>
+                  </div>
+                  <div class="ba-pair">
+                    <div class="ba-side">
+                      <div class="ba-side-label ba-side-label--before">Before</div>
+                      <div class="ba-side-img">
+                        <img src="/★丸野/H様邸屋根_カバー工法/600099505697718292.jpg" alt="H様邸 屋根 施工前" loading="lazy" />
+                      </div>
+                    </div>
+                    <div class="ba-arrow-divider">
+                      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                    </div>
+                    <div class="ba-side">
+                      <div class="ba-side-label ba-side-label--after">After</div>
+                      <div class="ba-side-img">
+                        <img src="/★丸野/H様邸屋根_カバー工法/600099522172944526.jpg" alt="H様邸 屋根 施工後" loading="lazy" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
             </div>
+            <!-- Pagination -->
+            <div class="swiper-pagination ba-pagination"></div>
+            <!-- Navigation -->
+            <div class="swiper-button-prev ba-button-prev"></div>
+            <div class="swiper-button-next ba-button-next"></div>
           </div>
-
-          <!-- Case 2: S様邸 浴室 -->
-          <div class="ba-case">
-            <div class="ba-case-header">
-              <h3 class="ba-case-title">S様邸 浴室リフォーム</h3>
-            </div>
-            <div class="ba-pair">
-              <div class="ba-side">
-                <div class="ba-side-label ba-side-label--before">Before</div>
-                <div class="ba-side-img">
-                  <img src="/施工事例/S様邸　浴室　前.jpg" alt="S様邸 浴室 施工前" loading="lazy" />
-                </div>
-              </div>
-              <div class="ba-arrow-divider">
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
-              </div>
-              <div class="ba-side">
-                <div class="ba-side-label ba-side-label--after">After</div>
-                <div class="ba-side-img">
-                  <img src="/施工事例/S様邸　浴室　後.jpg" alt="S様邸 浴室 施工後" loading="lazy" class="brighten-img" />
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Case 3: H様邸 屋根カバー工法 -->
-          <div class="ba-case">
-            <div class="ba-case-header">
-              <h3 class="ba-case-title">H様邸 屋根カバー工法</h3>
-            </div>
-            <div class="ba-pair">
-              <div class="ba-side">
-                <div class="ba-side-label ba-side-label--before">Before</div>
-                <div class="ba-side-img">
-                  <img src="/★丸野/H様邸屋根_カバー工法/600099505697718292.jpg" alt="H様邸 屋根 施工前" loading="lazy" />
-                </div>
-              </div>
-              <div class="ba-arrow-divider">
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
-              </div>
-              <div class="ba-side">
-                <div class="ba-side-label ba-side-label--after">After</div>
-                <div class="ba-side-img">
-                  <img src="/★丸野/H様邸屋根_カバー工法/600099522172944526.jpg" alt="H様邸 屋根 施工後" loading="lazy" />
-                </div>
-              </div>
-            </div>
-          </div>
-
         </div>
 
         <div class="ba-more-wrapper fade-up delay-300">
@@ -321,10 +343,79 @@ export const BeforeAfter = () => {
         color: white;
       }
 
+      /* --- Swiper Styles --- */
+      .ba-slider-container {
+        position: relative;
+        padding: 0 40px; /* Space for navigation arrows */
+      }
+
+      .ba-swiper {
+        padding-bottom: 3rem; /* Space for pagination */
+      }
+
+      .swiper-slide {
+        height: auto;
+      }
+
+      /* Navigation Arrows */
+      .ba-button-prev,
+      .ba-button-next {
+        color: var(--color-accent);
+        background: var(--color-bg-white);
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        top: 40%;
+      }
+
+      .ba-button-prev:after,
+      .ba-button-next:after {
+        font-size: 1.2rem;
+        font-weight: bold;
+      }
+
+      .ba-button-prev {
+        left: -10px;
+      }
+
+      .ba-button-next {
+        right: -10px;
+      }
+
+      /* Pagination Dots */
+      .ba-pagination {
+        bottom: 0 !important;
+      }
+
+      .ba-pagination .swiper-pagination-bullet {
+        width: 10px;
+        height: 10px;
+        background: var(--color-text-secondary);
+        opacity: 0.5;
+        transition: all 0.3s ease;
+      }
+
+      .ba-pagination .swiper-pagination-bullet-active {
+        opacity: 1;
+        background: var(--color-accent);
+        width: 24px;
+        border-radius: 5px;
+      }
+
       /* --- Mobile --- */
       @media (max-width: 768px) {
         .before-after-section {
           padding: var(--spacing-md) 0;
+        }
+
+        .ba-slider-container {
+          padding: 0; /* Remove padding on mobile */
+        }
+
+        .ba-button-prev,
+        .ba-button-next {
+          display: none; /* Hide arrows on mobile, rely on swipe */
         }
 
         .intro-block {
@@ -347,10 +438,6 @@ export const BeforeAfter = () => {
 
         .ba-section-title {
           font-size: 1.8rem;
-        }
-
-        .ba-cases-wrapper {
-          gap: 2rem;
         }
 
         .ba-pair {
@@ -414,5 +501,29 @@ export const BeforeAfter = () => {
 };
 
 export const initBeforeAfterSliders = () => {
-  // No slider initialization needed for side-by-side layout
+  new Swiper('.ba-swiper', {
+    modules: [Navigation, Pagination, Autoplay],
+    slidesPerView: 1,
+    spaceBetween: 30,
+    centeredSlides: true,
+    loop: true,
+    autoplay: {
+      delay: 5000,
+      disableOnInteraction: false,
+    },
+    pagination: {
+      el: '.ba-pagination',
+      clickable: true,
+    },
+    navigation: {
+      nextEl: '.ba-button-next',
+      prevEl: '.ba-button-prev',
+    },
+    breakpoints: {
+      1024: {
+        slidesPerView: 1.2, /* Show a bit of the next/prev slide on large screens */
+        spaceBetween: 40,
+      }
+    }
+  });
 };
